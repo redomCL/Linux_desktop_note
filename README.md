@@ -4,8 +4,8 @@
 
 * apt：包管理器，有图形前端synaptic，安装软件的基础。
 
-* flatpak：包管理器，有图形前端flathub软件商店，用于对apt的扩充。包含大量游戏模拟器软件。
+* flatpak：包管理器，有图形前端flathub软件商店，用于对apt的扩充。包含大量游戏模拟器软件。！有错误待修改
 
-* snap：包管理器，通过终端命令行操作，暂未发现图形前端，用于对apt的扩充。
+* snap：包管理器，有图形前端snap-store软件商店，用于对apt的扩充。
 
 * fuse：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。
