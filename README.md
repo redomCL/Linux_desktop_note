@@ -1,6 +1,7 @@
 # 这是一个笔记本，用来记录Linux桌面版日常家用笔记
 
 ## 一、包管理相关：软件安装
+* 实际上GNOME除了作为Ubuntu的桌面，同时也为大部分包管理器（软件商店）提供了一个图形界面，apt、snap、flatpak和dnf都可以用gnome-software作为图形包管理器（图形软件商店）
 
 * deb/Ubuntu：Ubuntu；前端包管理器apt，图形前端包管理器synaptic/gnome-software，安装软件的基础。
 
