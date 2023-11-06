@@ -1,5 +1,10 @@
 # 这是一个笔记本，用来记录Linux桌面版日常家用笔记
 
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/Ubuntu.png)
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/duckstation.png)
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/gnome-software.png)
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/synaptic.png)
+
 ## 一、包管理相关：软件安装
 * 实际上GNOME除了作为Ubuntu的桌面，同时也为大部分包管理器（软件商店）提供了一个图形界面，apt、snap、flatpak和dnf都可以用gnome-software作为图形包管理器（图形软件商店）
 
