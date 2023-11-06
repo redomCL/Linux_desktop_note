@@ -5,6 +5,13 @@
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/gnome-software.png)
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/synaptic.png)
 
+# 前言：
+* Linux目前的发展相比Windows真的不适合日常家用娱乐，易用性要差的相当多，但是为了不完全依赖商业形式运转的Windows操作系统，我还是尽可能的去了解一下Linux，本合集为Linux为了日常家用娱乐为主的笔记。 具体主要用途：
+*  1、家庭影音：主要以跨平台的优秀播放器mpv为主，也可以用基于mpv的gnome mpv、smplayer
+*  2、网络通讯：微信、QQ、跨平台的优秀浏览器firefox
+*  3、游   戏：steam和wine，Linux原生模拟器
+*  ...
+
 ## 一、包管理相关：软件安装
 * 实际上GNOME除了作为Ubuntu的桌面，同时也为大部分包管理器（软件商店）提供了一个图形界面，apt、snap、flatpak和dnf都可以用gnome-software作为图形包管理器（图形软件商店）
 
