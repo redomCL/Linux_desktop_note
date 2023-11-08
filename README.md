@@ -17,7 +17,7 @@
 
 * deb/Ubuntu：Ubuntu；前端包管理器apt，图形前端包管理器synaptic/gnome-software，安装软件的基础。
 
-* ubuntu snap：Ubuntu；前端包管理器snap，有图形前端snap-store/gnome-software，用于对apt的扩充。
+* Ubuntu snap：Ubuntu；前端包管理器snap，有图形前端snap-store/gnome-software，用于对apt的扩充。
 
 * Flathub：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，用于对apt的扩充。包含大量游戏模拟器软件。
 
