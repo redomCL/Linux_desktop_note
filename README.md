@@ -30,7 +30,7 @@
 
 * *Flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，用于对apt的扩充。包含大量游戏模拟器软件。
 
-## 二、Linux显卡驱动篇
+## 二、Linux显卡驱动篇：由于AMD显卡方面在Linux上开源，所以在Linux上显卡我更偏向于使用AMD而不是英伟达
 
 ### AMD显卡篇
 
