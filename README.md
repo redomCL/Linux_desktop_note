@@ -64,6 +64,6 @@
 
 * 浏览器和播放器用优秀的跨平台软件Firefox和mpv，注意火狐在登陆账号上是可以去反复切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号，mpv方面因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv
 
-* Ubuntu内置Openvpn方便了很多回家需要的部署，远程则可以用apt库中的Remmina工具。
+* Ubuntu内置OpenVPN方便了很多回家需要的部署，远程则可以用apt库中的Remmina工具。
 
 * P2P方面，Linux当然更不缺少相关工具，我依然喜欢使用一直最常用的qbittorrent，这是我唯一觉得比Windows平台上的同款更好看的带UI的工具。
