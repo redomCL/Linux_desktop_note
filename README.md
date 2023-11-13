@@ -48,7 +48,7 @@
 
 * 2、Nouveua：英伟达非官方开源驱动，英伟达似乎并不认可，经过测试对游戏和模拟器效率不如官方驱动，不过日常功能都算尚可，安装Ubuntu时直接驱动。
 
-* 3、Linux下英伟达有个控制面板叫做X Server NVIDIA Setting。
+* 3、Linux下英伟达有个控制面板叫做NVIDIA X Server SettingS。
 
 ### 英特尔显卡篇
 
