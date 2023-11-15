@@ -62,7 +62,7 @@
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/Linux%E8%8B%B1%E4%BC%9F%E8%BE%BE%E9%A9%B1%E5%8A%A8.png)
 
-![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
+![](https://github.com/redomCL/Linux_desktop_note/blob/main/NVIDIA%20X%20Server%20Settings.png)
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
 
