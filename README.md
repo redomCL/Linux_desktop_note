@@ -2,11 +2,6 @@
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/Ubuntu.png)
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/duckstation.png)
-![](https://github.com/redomCL/Linux-desktop-note/blob/main/gnome-software.png)
-![](https://github.com/redomCL/Linux-desktop-note/blob/main/synaptic.png)
-![](https://github.com/redomCL/Linux_desktop_note/blob/main/Linux%E8%8B%B1%E4%BC%9F%E8%BE%BE%E9%A9%B1%E5%8A%A8.png)
-![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
-![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
 
 # 前言：
 * 目前Linux桌面发行版的发展相比Windows真的不适合日常家用娱乐，易用性要差的相当多；当然了，Linux桌面发行版目前的软件生态也真的满纯粹，绝大多数软件都可以默认安装，没有广告没有额外的骚扰，不需要像Windows一样每接触新的软件都要特别小心怕被捆绑等其他骚扰，目前Linux桌面发行版的软件生态问题主要还是1.软件不够，大多数厂商因为利益关系都没有动力在Linux桌面发行版上发布较新的家用软件；2.虽然有开源软件，但是这种非利益驱动下的软件表现参差不齐，有功能和界面都很差的，也有功能强大界面极其粗糙的，对普通家用用户来说非常不友好；3.Linux桌面发行版非常碎片，各种包管理器和图形化软件商店以及各种桌面眼花缭乱，另外个人虽然觉得各种桌面很华丽，但是手感上觉得是不如Windows的，无论是GNOME还是KDE，都有一种边界判定不清晰，“粘手”的感觉；4.依赖问题相当头大，相应的解决办法就是依靠包管理器，但是就像3中所说的，包管理器本身都相当碎片。以上，但为了不完全依赖商业形式运转的Windows操作系统这种独（毒？）苗，我还是尽可能的去了解一下Linux桌面发行版，本合集是Linux桌面发行版为了日常家用娱乐为主的笔记。 具体主要用途：
@@ -32,6 +27,10 @@
 * *fuse：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。
 
 * *Flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，用于对apt的扩充。包含大量游戏模拟器软件。
+
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/gnome-software.png)
+
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/synaptic.png)
 
 ## 二、Linux显卡驱动篇：由于AMD显卡方面在Linux上开源，所以在Linux上显卡我更偏向于使用AMD而不是英伟达
 
@@ -61,6 +60,12 @@
 
 * 虚拟机暂且不提，我一共测试了三套不同年代的平台，他们分别是笔记本AMD A8-4500M，笔记本英特尔 酷睿I5-7300HQ + 1050Ti，台式AMD 锐龙5900X + 1060 + B450F，通过真机安装Ubuntu测试，其他硬件驱动似乎都已经被Ubuntu内置集成好的驱动良好的驱动起来了，部分硬件比如无线网卡安装Ubuntu后默认是没有驱动成功的，通过有线网卡或其他可以直接驱动起来的无线网卡，联网更新也可以驱动起来，大多数硬件没有问题，少数Ubuntu没有为其集成驱动的依然是有问题的，这部分硬件的解决办法要么是找硬件厂商网站查看是否有相应驱动，要么去其他网站寻找代码自行编译，还是有一定门槛的。所以我的建议还是尽可能选择Ubuntu默认或者通过后续联网就能支持的硬件。硬件的驱动是否被Ubuntu集成，很大程度的决定因素应该是他本身的驱动是否开源了，退一步至少他应该发布过闭源驱动，再退一步恐怕就只能是至少被人逆向出来过。此外Ubuntu和其他Linux桌面发行版一般是不内置闭源驱动的，这类驱动被收纳在库里，需要安装系统后联网选择，更激进的Linux桌面发行版甚至根本就不收纳闭源形式的驱动。
 
+![](https://github.com/redomCL/Linux_desktop_note/blob/main/Linux%E8%8B%B1%E4%BC%9F%E8%BE%BE%E9%A9%B1%E5%8A%A8.png)
+
+![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
+
+![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
+
 ## 三、家用娱乐：调试、影音、网络
 
 * 一款叫做corectrl的工具可以充当AMD显卡和AMD、英特尔CPU的图形控制面板，风格类似于AMD的深红/肾上腺素UI，另一款叫做corepower的带有图形界面的工具，基于BIOS调用CPU的策略，精准指定CPU频率范围。
@@ -73,3 +78,5 @@
 
 ## 四、Linux下的引导和轮转：
 * Linux现在在UEFI标准下使用GRUB2实现引导链。Windows从8开始在UEFI标准下下使用自己的bootmgfw实现引导链。目前bootmgfw不能跳转到GRUB2（Windows的引导加载Linux很麻烦），但是GRUB2支持跳转到bootmgfw（Linux的引导加载Windows），所以Linux和Windows真机共存一般是选择用GRUB2引导。"sudo GRUB_DISABLE_OS_PROBER=true update-grub"命令可以允许GRUB2自动搜索其他操作系统，以此将Windows添加到GRUB2，之后详情可在Linux桌面发行版环境下使用图形工具GRUB Customize进行配置，比如引导菜单驻留时间、引导项、引导菜单界面定制。
+
+![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
