@@ -70,3 +70,6 @@
 * Ubuntu内置OpenVPN方便了很多回家需要的部署，远程则可以用apt库中的Remmina工具。
 
 * P2P方面，Linux当然更不缺少相关工具，我依然喜欢使用一直最常用的qbittorrent，这是我唯一觉得比Windows平台上的同款更好看的带UI的工具。
+
+## 四、Linux下的引导和轮转：
+* Linux现在在UEFI标准下使用GRUB2实现引导链。Windows从8开始在UEFI标准下下使用自己的bootmgfw实现引导链。目前bootmgfw不能跳转到GRUB2（Windows的引导加载Linux很麻烦），但是GRUB2支持跳转到bootmgfw（Linux的引导加载Windows），所以Linux和Windows真机共存一般是选择用GRUB2引导。"sudo GRUB_DISABLE_OS_PROBER=true update-grub"命令可以允许GRUB2自动搜索其他操作系统，以此将Windows添加到GRUB2，之后详情可在Linux桌面发行版环境下使用图形工具GRUB Customize进行配置，比如引导菜单驻留时间、引导项、引导菜单界面定制。
