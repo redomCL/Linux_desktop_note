@@ -80,3 +80,13 @@
 * Linux现在在UEFI标准下使用GRUB2实现引导链。Windows从8开始在UEFI标准下下使用自己的bootmgfw实现引导链。目前bootmgfw不能跳转到GRUB2（Windows的引导加载Linux很麻烦），但是GRUB2支持跳转到bootmgfw（Linux的引导加载Windows），所以Linux和Windows真机共存一般是选择用GRUB2引导。"sudo GRUB_DISABLE_OS_PROBER=true update-grub"命令可以允许GRUB2自动搜索其他操作系统，以此将Windows添加到GRUB2，之后详情可在Linux桌面发行版环境下使用图形工具GRUB Customize进行配置，比如引导菜单驻留时间、引导项、引导菜单界面定制。
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
+
+## 五、GNOME插件
+
+* GNOME桌面可以安装插件增强功能，以下是例举我个人必备的插件：
+
+* gnome tweak 优化：GNOME本身的设置插件
+
+* 扩展管理器：GNOME插件的管理器
+
+*  vitals：监视CPU、内存、网速等设备状态。
