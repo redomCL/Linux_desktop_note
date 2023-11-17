@@ -20,13 +20,13 @@
 
 * Ubuntu .snap：前端包管理器snap，有图形前端snap-store/gnome-software，用于对apt的扩充。
 
-* Fodera/RedHat .RPM：前端包管理器dnf，图形前端包管理器gnome-software。
+* RedHat/Fedora .RPM：前端包管理器dnf，图形前端包管理器gnome-software。
 
 * openSUSE .RPM：前端包管理器zypper，图形前端包管理器Yast2/Discover软件管理中心。
 
 * *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。
 
-* *Flatpak .flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，用于对apt的扩充。包含大量游戏模拟器软件。
+* *Flathub .flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，用于对apt的扩充。包含大量游戏模拟器软件。
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/gnome-software.png)
 
