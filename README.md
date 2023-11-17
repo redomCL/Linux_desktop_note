@@ -22,7 +22,7 @@
 
 * Fodera/RedHat .RPM：前端包管理器dnf，图形前端包管理器gnome-software。
 
-* openSUSE：前端包管理器zypper，Discover软件管理中心图形前端包管理器。
+* openSUSE：前端包管理器zypper，图形前端包管理器Yast2/Discover软件管理中心。
 
 * *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。
 
