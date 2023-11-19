@@ -52,6 +52,8 @@
 
 * 3、Linux下英伟达有个控制面板叫做NVIDIA X Server Settings，需要注意的是双显卡笔记本（核显+独立N卡）这种要安装prime-select然后prime-select nvidia让N卡独立工作才可以解决各种奇奇怪怪的问题，比如全屏撕裂问题。
 
+* 英伟达新的闭源驱动开始逐渐支持wayland，但是也可能有各种问题，在基于GNOME桌面环境的Ubuntu中，注意/usr/lib/udev/rules.d/61-gdm.rules这个文件，它在影响wayland和x11之间的切换。 
+
 ### 英特尔显卡篇
 
 * 关于英特尔的显卡，不管是独立显卡还是核显，英特尔似乎都将相关数据分发到各Linux发行版供应商手里，由这些Linux发行版供应商自行开发并支持，目前未找到英特尔官方发行的任何Linux驱动安装包。
