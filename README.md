@@ -70,7 +70,7 @@
 
 * 一款叫做corectrl的工具可以充当AMD显卡和AMD、英特尔CPU的图形控制面板，风格类似于AMD的深红/肾上腺素UI，另一款叫做corepower的带有图形界面的工具，基于BIOS调用CPU的策略，精准指定CPU频率范围。
 
-* 浏览器和播放器用优秀的跨平台软件Firefox和mpv，注意火狐在登陆账号上是可以去反复切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号，mpv方面因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv
+* 浏览器和播放器用优秀的跨平台软件Firefox和mpv，注意火狐在登陆账号上是可以去反复切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。关于Linux下火狐的一点设置：Linux下的火狐默认不会在新标签打开网页，可通过一下参数解决，about:config - "browser.search.openintab=true" 、"browser.urlbar.openintab=true"、"browser.tabs.loadBookmarksInTabs=true"、"browser.link.open_newwindow=3"、"browser.link.open_newwindow.restrictio=0";mpv方面因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv
 
 * Ubuntu内置OpenVPN方便了很多回家需要的部署，远程则可以用apt库中的Remmina工具。
 
