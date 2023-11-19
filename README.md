@@ -76,6 +76,8 @@
 
 * P2P方面，Linux当然更不缺少相关工具，我依然喜欢使用一直最常用的qbittorrent，这是我唯一觉得比Windows平台上的同款更好看的带UI的工具。
 
+* 远程控制：ubuntu 23.10实际上已经内置远程控制并支持Windows的RDP协议，但在实际使用时，以Windows10 22H2为例并不能正常连接，提示发生身份验证错误，有更多数据可用，所以要要通过sudo apt install tightvncserver xrdp命令安装xrdp实现。Linux的远程控制和Windows的登录思路有所不同，远程控制实际是使用用户在远程登录并控制电脑，由于Linux机制问题，远程控制不能注销当前本地正在登录的用户，然后在远程重新登录以完成远程控制，因此远程控制如果想用当前本地用户登陆，首先要确保这个用户已经在本地注销！某则远程控制失败。
+
 ## 四、Linux下的引导和轮转：
 * Linux现在在UEFI标准下使用GRUB2实现引导链。Windows从8开始在UEFI标准下下使用自己的bootmgfw实现引导链。目前bootmgfw不能跳转到GRUB2（Windows的引导加载Linux很麻烦），但是GRUB2支持跳转到bootmgfw（Linux的引导加载Windows），所以Linux和Windows真机共存一般是选择用GRUB2引导。"sudo GRUB_DISABLE_OS_PROBER=true update-grub"命令可以允许GRUB2自动搜索其他操作系统，以此将Windows添加到GRUB2，之后详情可在Linux桌面发行版环境下使用图形工具GRUB Customize进行配置，比如引导菜单驻留时间、引导项、引导菜单界面定制。
 
