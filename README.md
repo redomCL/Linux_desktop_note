@@ -12,17 +12,17 @@
 
 ## 一、包管理相关：软件安装
 
-* Linux发行版不同于Windows的软件安装习惯，Linux发行版一般有自己的在线软件库（各国都有镜像源解决不能访问的问题），并通过搭配内置的包管理器进行管理，以下是一些用过的包管理器列举。
+* Linux发行版不同于Windows的软件安装习惯，Linux发行版一般有自己的在线软件库（各国都有镜像源解决不能访问的问题），并通过搭配内置的包管理器（命令行/图形界面）进行管理，以下是一些用过的包管理器列举。
 
-* 实际上GNOME除了作为Ubuntu的桌面，同时也为大部分包管理器（软件商店）提供了一个图形界面，apt、snap、flatpak和dnf都可以用gnome-software作为图形包管理器（图形软件商店），同理的还有KDE桌面的Discover软件管理中心。
+* GNOME的桌面环境，同时提供了一个图形界面的包管理器gnome-software(软件商店)，各种命令行包管理器都可以通过它实现图形界面包管理器，同理的还有KDE桌面的plasma-discover(Discover软件管理中心)。
 
-* Debian/Ubuntu .deb：前端包管理器apt，图形前端包管理器synaptic/gnome-software。
+* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。
 
-* Ubuntu .snap：前端包管理器snap，有图形前端snap-store/gnome-software。
+* Ubuntu .snap：命令行包管理器snap，专有图形界面包管理器snap-store。
 
-* RedHat/Fedora .RPM：前端包管理器dnf，图形前端包管理器gnome-software。
+* RedHat/Fedora .RPM：命令行包管理器器dnf，默认使用图形包管理器gnome-software。
 
-* openSUSE .RPM：前端包管理器zypper，图形前端包管理器Yast2/Discover软件管理中心。
+* openSUSE .RPM：命令行包管理器zypper，默认使用图形包管理器Yast2/Discover软件管理中心。
 
 * *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。
 
