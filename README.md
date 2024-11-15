@@ -10,10 +10,10 @@
 * 3、游戏：steam和wine，Linux原生模拟器
 * ...
 
-## EX、运行篇&系统设置完善篇：
+## EX、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷笔记
 * 安装apt图形管理工具新立得：sudo apt install synaptic
 * ./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行
-* executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组建，注意区分afuse和fuse。
+* executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组建，注意区分afuse和fuse，总之，运行appimage要注意fuse，linux任何时候都要考虑依赖（类似windoiws运行库？）。
 * 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：sudo apt install ubuntu-desktop,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
 * 安装flathub，flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
 * 注意ubuntu会包含专用闭源驱动，如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
@@ -33,7 +33,7 @@
 
 * openSUSE .RPM：命令行包管理器zypper，默认使用图形包管理器Yast2/Discover软件管理中心。
 
-* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。
+* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。（随着更新此项可能已经过时）
 
 * *Flathub .flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，为各包管理扩充，包含大量游戏模拟器软件。
 
@@ -55,7 +55,7 @@
 
 ### 英伟达显卡篇
 
-* 1、英伟达官方闭源驱动：拓展名为.run的官方驱动，安装该驱动要屏蔽掉Nouveua开源驱动，否则冲突，经过测试英伟达官方驱动在安装时一般会自动进行屏蔽（加入黑名单处理），如果未处理请手动添加，关键词：blacklist。官方驱动更新频率不错，经过测试对游戏和模拟器效率要更好，但是因为某些我不懂的原因，Linus祖师爷表示F**K NVIDIA!
+* 1、英伟达官方闭源驱动：拓展名为.run的官方驱动，安装该驱动要屏蔽掉Nouveua开源驱动，否则冲突，经过测试英伟达官方驱动在安装时一般会自动进行屏蔽（加入黑名单处理），如果未处理请手动添加，关键词：blacklist。官方驱动更新频率不错，经过测试对游戏和模拟器效率要更好，但是因为某些我不懂的原因，Linus祖师爷表示F**K NVIDIA!开机登陆界面，右下角齿轮可切换x11/wayland。
 
 * 2、Nouveau：英伟达非官方开源驱动，英伟达似乎并不认可，经过测试对游戏和模拟器效率不如官方驱动，不过日常功能都算尚可，安装Ubuntu时作为N卡的默认驱动。
 
