@@ -12,7 +12,7 @@
 
 ## EX、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷笔记
 * 安装apt图形管理工具新立得：sudo apt install synaptic
-* ./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行
+* ./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行，chmod +X ....开启可执行程序权限。
 * executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组建，注意区分afuse和fuse，总之，运行appimage要注意fuse，linux任何时候都要考虑依赖（类似windoiws运行库？）。
 * 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：sudo apt install ubuntu-desktop,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
 * 安装flathub，flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
@@ -33,7 +33,9 @@
 
 * openSUSE .RPM：命令行包管理器zypper，默认使用图形包管理器Yast2/Discover软件管理中心。
 
-* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。（随着更新此项可能已经过时）
+* *executable：独立可执行程序，可能以来cegui，.net，根据具体软件而定。
+
+* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意”fuse“对系统的破坏，注意可能需要”afuse“。
 
 * *Flathub .flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，为各包管理扩充，包含大量游戏模拟器软件。
 
