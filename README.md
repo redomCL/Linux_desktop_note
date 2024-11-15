@@ -10,6 +10,15 @@
 * 3、游戏：steam和wine，Linux原生模拟器
 * ...
 
+## EX、运行篇&系统设置完善篇：
+* 安装apt图形管理工具新立得：sudo apt install synaptic
+* ./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行
+* executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组建，注意区分afuse和fuse。
+* 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：sudo apt install ubuntu-desktop,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
+* 安装flathub，flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
+* 注意ubuntu会包含专用闭源驱动，如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
+* 
+
 ## 一、包管理相关：软件安装
 
 * Linux发行版不同于Windows的软件安装习惯，Linux发行版一般有自己的在线软件库（各国都有镜像源解决不能访问的问题），并通过搭配内置的包管理器（命令行/图形界面）进行管理，以下是一些用过的包管理器列举。
