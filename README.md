@@ -1,4 +1,4 @@
-# 这是一个笔记本，用来记录Linux桌面版日常家用笔记
+# 这是笔记，用来记录Linux桌面版日常家用的经历
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/Ubuntu.png)
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/duckstation.png)
@@ -36,7 +36,7 @@
 
 * openSUSE .RPM：命令行包管理器zypper，默认使用图形包管理器Yast2/Discover软件管理中心。
 
-* *executable：独立可执行程序，可能以来cegui，.net，根据具体软件而定。
+* *executable：独立可执行程序，可能依赖cegui，.net，根据具体软件而定。
 
 * *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意”fuse“对系统的破坏，注意可能需要”afuse“。
 
