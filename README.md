@@ -102,3 +102,5 @@
 *  vitals：监视CPU、内存、网速等设备状态。
 
 *  corectrl：CPU、GPU设置工具。
+
+*  Dynamic Top Panel：状态栏设置
