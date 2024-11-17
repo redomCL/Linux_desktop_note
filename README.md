@@ -28,7 +28,7 @@
 
 * GNOME的桌面环境，同时提供了一个图形界面的包管理器gnome-software(软件商店)，各种命令行包管理器都可以通过它实现图形界面包管理器，同理的还有KDE桌面的plasma-discover(Discover软件管理中心)。
 
-* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。
+* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。删除PPA仓库:sudo add-apt-repository --remove ppaname
 
 * Ubuntu .snap：命令行包管理器snap，专有图形界面包管理器snap-store。
 
