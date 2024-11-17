@@ -105,4 +105,12 @@
 
 *  corectrl：CPU、GPU设置工具。
 
-*  Dynamic Top Panel：状态栏设置
+*  Blur my shell：毛玻璃效果
+
+*  Burn My Windows:窗口开启和关闭动效
+
+*  Compiz alike magic lamp effect:最大化最小化动效
+
+*  windows窗口习惯：Ubuntu dock - 行为设为最小化或显示预览
+
+*  Dynamic Top Panel（已有替代）：状态栏设置
