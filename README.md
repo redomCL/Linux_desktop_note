@@ -99,7 +99,7 @@
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
-## 五、GNOME插件篇：GNOME桌面可以安装插件增强功能，以下是例举我个人必备的插件（"优化(GNOME Tweak)"和"扩展管理器"要提前安装，这两个是GNOME的设置和插件管理核心工具）
+## 五、GNOME插件篇：GNOME桌面可以安装插件增强功能，以下是例举我个人必备的插件，（名为”扩展管理器“的软件是GNOME的插件管理面板，是核心工具）
 
 *  vitals：监视CPU、内存、网速等设备状态。
 
@@ -118,3 +118,5 @@
 *  windows窗口习惯：Ubuntu dock - 行为设为最小化或显示预览
 
 *  Dynamic Top Panel（已有替代）：状态栏设置
+
+*  ![](https://github.com/redomCL/Linux-desktop-note/blob/main/扩展管理器.png)
