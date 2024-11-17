@@ -46,6 +46,12 @@
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/synaptic.png)
 
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/flathub部署1.png)
+
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/flathub部署2.png)
+
+![](https://github.com/redomCL/Linux-desktop-note/blob/main/flathub部署3.png)
+
 ## 二、Linux显卡驱动篇：由于AMD显卡方面在Linux上开源，所以在Linux上显卡我更偏向于使用AMD而不是英伟达
 
 ### AMD显卡篇
