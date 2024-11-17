@@ -38,7 +38,7 @@
 
 * *executable：独立可执行程序，可能依赖cegui，.net，根据具体软件而定。
 
-* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意”fuse“对系统的破坏，注意可能需要”afuse“。
+* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意"fuse"对系统的破坏，注意可能需要"afuse"。
 
 * *Flathub .flatpak：多种Linux桌面发行版；前端包管理器flatpak，图形前端包管理器gnome-software，为各包管理扩充，包含大量游戏模拟器软件。
 
@@ -107,7 +107,7 @@
 
 *  Blur my shell：毛玻璃效果
 
-*  Burn My Windows:窗口开启关闭动效
+*  Burn My Windows：窗口开启关闭动效
 
 *  Compiz alike magic lamp effect:窗口最大化最小化动效
 
