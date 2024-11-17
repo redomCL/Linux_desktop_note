@@ -107,9 +107,13 @@
 
 *  Blur my shell：毛玻璃效果
 
-*  Burn My Windows:窗口开启和关闭动效
+*  Burn My Windows:窗口开启关闭动效
 
-*  Compiz alike magic lamp effect:最大化最小化动效
+*  Compiz alike magic lamp effect:窗口最大化最小化动效
+
+*  Compiz windows effect：窗口移动特效
+
+*  Coverflow alt-tab：切换窗口特效
 
 *  windows窗口习惯：Ubuntu dock - 行为设为最小化或显示预览
 
