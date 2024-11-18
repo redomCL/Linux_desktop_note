@@ -11,16 +11,16 @@
 * ...
 
 ## EX、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷笔记
-* 列举所有硬件：sudo lshw，查看网卡型号：lspci | grep -i net，查看蓝牙：hciconfig -a
-* 完善图形apt：安装apt图形管理工具新立得：sudo apt install synaptic
-* 运行当前目录程序：./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行，chmod +X ....开启可执行程序权限。
+* 列举所有硬件：sudo lshw，查看网卡型号：`lspci | grep -i net`，查看蓝牙：`hciconfig -a`
+* 完善图形apt：安装apt图形管理工具新立得：`sudo apt install synaptic`
+* 运行当前目录程序：./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行，`chmod +X ....`开启可执行程序权限。
 * 独立可执行程序：executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组建，注意区分afuse和fuse，总之，运行appimage要注意fuse，linux任何时候都要考虑依赖（类似windoiws运行库？）。
-* 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：sudo apt install ubuntu-desktop,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
+* 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：`sudo apt install ubuntu-desktop`,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
 * 安装flathub：flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
 * 注意ubuntu会包含专用闭源驱动：如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
-* nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：sudo apt nautilus-share,部署smb：部署用户组：sudo usermod -aG sambashare $(whoami)后重启，设置smb密码：sudo smbpasswd -a $(whoami)，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：smb://192.168.110.124/users/，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
+* nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`,部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
 * 远程回家：ubuntu自带openvpn，直接导入配置文件然后输入密码即可。
-* 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可sudo dmesg | grep -i blue查找缺少问题，如遇到缺少固件，则进行补足sudo cp ”缺失部分" /lib/xxx/xxx/，sudo modprobe -r btusb，sudo modprobe btusb
+* 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可`sudo dmesg | grep -i blue`查找缺少问题，如遇到缺少固件，则进行补足`sudo cp ”缺失部分" /lib/xxx/xxx/`，`sudo modprobe -r btusb`，`sudo modprobe btusb`
 * 系统语言方面：在系统-区域与语言中，对语言全面设置中文，即可将所有软件默认语言处于中文状态，并且会包含中文输入法，fcitx只是一种输入法可以卸载，对于libreoffice安装后如果是英文，可以在包管理中搜索中文包。
 
 ## 一、包管理篇：软件安装
@@ -29,7 +29,7 @@
 
 * GNOME的桌面环境，同时提供了一个图形界面的包管理器gnome-software(软件商店)，各种命令行包管理器都可以通过它实现图形界面包管理器，同理的还有KDE桌面的plasma-discover(Discover软件管理中心)。
 
-* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。删除PPA仓库:sudo add-apt-repository --remove ppaname
+* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。删除PPA仓库:`sudo add-apt-repository --remove ppaname`
 
 * Ubuntu .snap：命令行包管理器snap，专有图形界面包管理器snap-store。
 
@@ -146,5 +146,5 @@
 
 ## 不明问题但解决篇：我能力有限认知不足，这是我的问题
 
-* /etc/profile.d/vte.sh丢失：cd /etc/profile.d/ls，输出将包含一个文件，例如 vte-XXX.sh，输入cp vte-XXX.sh vte.sh，问题修复。
+* /etc/profile.d/vte.sh丢失：`cd /etc/profile.d/ls`，输出将包含一个文件，例如 vte-XXX.sh，输入`cp vte-XXX.sh vte.sh`，问题修复。
  
