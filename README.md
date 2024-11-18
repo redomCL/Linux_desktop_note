@@ -20,7 +20,7 @@
 * 注意ubuntu会包含专用闭源驱动：如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
 * nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：sudo apt nautilus-share,部署smb：部署用户组：sudo usermod -aG sambashare $(whoami)后重启，设置smb密码：sudo smbpasswd -a $(whoami)，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：smb://192.168.110.124/users/，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
 * 远程回家：ubuntu自带openvpn，直接导入配置文件然后输入密码即可。
-* 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可dmesg | grep -i blue查找缺少问题，如遇到缺少固件，则进行补足sudo cp ”缺失部分" /lib/xxx/xxx/，sudo modprobe -r btusb，sudo modprobe btusb
+* 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可sudo dmesg | grep -i blue查找缺少问题，如遇到缺少固件，则进行补足sudo cp ”缺失部分" /lib/xxx/xxx/，sudo modprobe -r btusb，sudo modprobe btusb
 * 系统语言方面：在系统-区域与语言中，对语言全面设置中文，即可将所有软件默认语言处于中文状态，并且会包含中文输入法，fcitx只是一种输入法可以卸载，对于libreoffice安装后如果是英文，可以在包管理中搜索中文包。
 
 ## 一、包管理篇：软件安装
