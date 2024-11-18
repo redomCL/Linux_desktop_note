@@ -146,5 +146,5 @@
 
 ## 不明问题但解决篇：我能力有限认知不足，这是我的问题
 
-* /etc/profile.d/vte.sh丢失：`cd /etc/profile.d/ls`，输出将包含一个文件，例如 vte-XXX.sh，输入`cp vte-XXX.sh vte.sh`，问题修复。
+* /etc/profile.d/vte.sh丢失：`cd /etc/profile.d`，`ls`，输出将包含一个文件，例如 vte-XXX.sh，输入`cp vte-XXX.sh vte.sh`，问题修复。
  
