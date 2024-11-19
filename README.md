@@ -111,7 +111,7 @@
 
   新标签打开搜索：`browser.search.openintab=true`
 
-  新标签打开链接：`browser.urlbar.openintab=true`
+  新标签打开链接：`browser.urlbar.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
 
   新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`
 
