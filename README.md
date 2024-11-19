@@ -107,7 +107,7 @@
 
 ## 三、家用娱乐篇：调试、影音、网络
 
-* 浏览器：注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：`browser.search.openintab=true`、`browser.urlbar.openintab=true`、`browser.tabs.loadBookmarksInTabs=true`、`browser.link.open_newwindow=3`、`browser.link.open_newwindow.restrictio=0`。
+* 浏览器：注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：新标签打开搜索：`browser.search.openintab=true`、新标签打开链接：`browser.urlbar.openintab=true`、新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`、`browser.link.open_newwindow=3`、`browser.link.open_newwindow.restrictio=0`。
 
 * 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv，当前默认设置在/.config/mpv。
 
