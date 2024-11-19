@@ -107,13 +107,13 @@
 
 ## 三、家用娱乐篇：调试、影音、网络
 
-* 一款叫做corepower的带有图形界面的工具，基于BIOS调用CPU的策略，精准指定CPU频率范围。另一款叫做corectrl的工具可以充当AMD显卡和AMD、英特尔CPU的图形控制面板，风格类似于AMD的深红/肾上腺素UI，。
+* 浏览器：注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：`browser.search.openintab=true`、`browser.urlbar.openintab=true`、`browser.tabs.loadBookmarksInTabs=true`、`browser.link.open_newwindow=3`、`browser.link.open_newwindow.restrictio=0`。
 
-* 浏览器和播放器用优秀的跨平台软件Firefox和mpv，注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，可通过about:config设置以下参数解决："browser.search.openintab=true"、"browser.urlbar.openintab=true"、"browser.tabs.loadBookmarksInTabs=true"、"browser.link.open_newwindow=3"、"browser.link.open_newwindow.restrictio=0"。mpv方面因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv
+* 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv，当前默认设置在/.config/mpv。
 
-* Ubuntu内置OpenVPN，直接导入配置文件然后输入密码即可回家，几乎不需要额外部署设置，远程则可以用apt库中的Remmina工具。
+* P2P下载：qbittorrent是跨平台工具，Linux上提供了多个可执行格式。
 
-* P2P方面，Linux当然更不缺少相关工具，我依然喜欢使用一直最常用的qbittorrent，这是我唯一觉得比Windows平台上的同款更好看的带UI的工具。
+* Ubuntu内置OpenVPN：直接导入配置文件然后输入密码即可回家，几乎不需要额外部署设置，远程则可以用apt库中的Remmina工具。
 
 * 远程控制：ubuntu 23.10实际上已经内置远程控制并支持Windows的RDP协议，但在实际使用时，以Windows10 22H2为例并不能正常连接，提示"发生身份验证错误，有更多数据可用"，所以要通过sudo apt install tightvncserver xrdp命令安装xrdp实现。Linux的远程控制和Windows的登录思路有所不同，远程控制实际是使用用户在远程登录并控制电脑，在Linux中，远程控制不能注销当前本地已登录的用户，然后在远程重新登录以完成远程控制，因此远程控制如果想用当前本地已登陆的用户登陆，首先要确保这个用户已经在本地注销！否则远程控制失败。
 
