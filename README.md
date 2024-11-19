@@ -43,21 +43,21 @@
 
 * *Flathub .flatpak：包含大量游戏模拟器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
 
-`abi <abi/4.0>,`
+  `abi <abi/4.0>,`
 
-`include <tunables/global>`
+  `include <tunables/global>`
 
-`profile bwrap /usr/bin/bwrap flags=(unconfined) {`
+  `profile bwrap /usr/bin/bwrap flags=(unconfined) {`
 
-`  userns,`
+  `  userns,`
 
-`  # Site-specific additions and overrides. See local/README for details.`
+  `  # Site-specific additions and overrides. See local/README for details.`
 
-`  include if exists <local/bwrap>`
+  `  include if exists <local/bwrap>`
 
-`}`
+  `}`
 
-执行：`sudo systemctl reload apparmor`
+  执行：`sudo systemctl reload apparmor`
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/gnome-software.png)
 
@@ -109,11 +109,11 @@
 
 * 浏览器：注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：
 
-新标签打开搜索：`browser.search.openintab=true`
+  新标签打开搜索：`browser.search.openintab=true`
 
-新标签打开链接：`browser.urlbar.openintab=true`。
+  新标签打开链接：`browser.urlbar.openintab=true`
 
-新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`。
+  新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`
 
 * 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv，当前默认设置在/.config/mpv。
 
