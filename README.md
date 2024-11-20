@@ -22,6 +22,34 @@
 * 远程回家：ubuntu自带openvpn，直接导入配置文件然后输入密码即可。
 * 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可`sudo dmesg | grep -i blue`查找缺少问题，如遇到缺少固件，则进行补足`sudo cp ”缺失部分" /lib/xxx/xxx/`，`sudo modprobe -r btusb`，`sudo modprobe btusb`
 * 系统语言方面：在系统-区域与语言中，对语言全面设置中文，即可将所有软件默认语言处于中文状态，并且会包含中文输入法，fcitx只是一种输入法可以卸载，对于libreoffice安装后如果是英文，可以在包管理中搜索中文包。
+*
+  `[Desktop Entry]`
+
+  `Version=1.0`
+
+  `Name=Firefox Web Browser`
+
+  `Comment=Browse the World Wide Web`
+
+  `GenericName=Web Browser`
+
+  `Keywords=Internet;WWW;Browser;Web;Explorer`
+
+  `Exec=firefox %u`
+
+  `Terminal=false`
+
+  `X-MultipleArgs=false`
+
+  `Type=Application`
+
+  `Icon=/opt/firefox/browser/chrome/icons/default/default128.png`
+
+  `Categories=GNOME;GTK;Network;WebBrowser;`
+
+  `MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;`
+
+  `StartupNotify=true`
 
 ## 一、包管理篇：软件安装
 
