@@ -10,7 +10,7 @@
 * 3、游戏：steam和wine，Linux原生模拟器
 * ...
 
-## EX1、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷笔记
+## EX1、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷部署笔记
 * 关于/usr：bin目录放可执行文件，lib目录放库文件，share目录放必要数据，由系统包管理器管理，安装的各种包都在这里；/usr/local里面的这三个目录由用户自己手动管理，放自行下载的程序，系统包管理器不管理；/home/users/.local：此处这三个目录是用户自己的目录，用户自己管理，自己使用。
 * 列举所有硬件：sudo lshw，查看网卡型号：`lspci | grep -i net`，查看蓝牙：`hciconfig -a`
 * 完善图形apt：安装apt图形管理工具新立得：`sudo apt install synaptic`
@@ -52,7 +52,7 @@
 
   `StartupNotify=true`
 
-## EX2、权限管理篇：
+## EX2、权限管理篇：在介绍包管理前记录一些权限管理的笔记
 * root是一个用户，对系统拥有最高权限：`root	ALL=(ALL:ALL) ALL`，sudo是一个root创建的用户组，该用户组下的所有用户可以申请root的权限来执行工作（%用于标识该名字是用户组，`ALL=(ALL:ALL) ALL`表示`主机=(用户:用户组) 命令`）：`%sudo	ALL=(ALL:ALL) ALL`。查看用户的权限：`sudo -l -U user_name`,查看用户所在组：`groups user_name`，列举sudo用户组的用户：`getent group sudo`。
 * 因此，在操作系统中，如果希望用户以root权限免密码运行工作则改为：`%sudo	ALL=(ALL:ALL) NOPASSWD:ALL`。但此时图形下运行需要root权限的工作仍然需要密码，尚未解决此问题。
 * 当用户不在sudo用户组，则无法以root权限工作（可能的提示是：用户名不在sudoers文件中），此时需要将用户添加到sudo用户组：`usermod -a -G sudo <users>`。同样的反推：将用户从sudo用户组删除：`sudo deluser <users> sudo`。
