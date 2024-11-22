@@ -56,7 +56,7 @@
 ## EX2、权限管理篇：在介绍包管理前记录一些权限管理的笔记
 * root是一个用户，对系统拥有最高权限：`root	ALL=(ALL:ALL) ALL`，sudo是一个root创建的用户组，该用户组下的所有用户可以申请root的权限来执行工作（%用于标识该名字是用户组，`ALL=(ALL:ALL) ALL`表示`主机=(用户:用户组) 命令`）：`%sudo	ALL=(ALL:ALL) ALL`。查看用户的权限：`sudo -l -U user_name`,查看用户所在组：`groups user_name`，列举sudo用户组的用户：`getent group sudo`。
 * 因此，在操作系统中，如果希望用户以root权限免密码运行工作则改为：`%sudo	ALL=(ALL:ALL) NOPASSWD:ALL`。但此时图形下运行需要root权限的工作仍然需要密码，尚未解决此问题。
-* 当用户不在sudo用户组，则无法以root权限工作（可能的提示是：用户名不在sudoers文件中），此时需要将用户添加到sudo用户组：`usermod -a -G sudo <users>`。同样的反推：将用户从sudo用户组删除：`sudo deluser <users> sudo`。
+* 当用户不在sudo用户组，则无法以root权限工作（可能的提示是：用户名不在sudoers文件中），此时需要将用户添加到sudo用户组：`sudo usermod -a -G sudo <users>`。同样的反推：将用户从sudo用户组删除：`sudo deluser <users> sudo`。
 * 各种情况导致失去root密码：开机时按住shift+tab显示grub。按下e编辑：`rw init=/bin/bash`替换`ro Quiet Splash $vt_handoff`，之后可执行无密码root进行维护(如`passwd`修改root密码)。`exec /sbin/init`刷新配置并退出维护。
 
 ## 一、包管理篇：软件安装
@@ -65,7 +65,7 @@
 
 * GNOME的桌面环境，同时提供了一个图形界面的包管理器gnome-software(软件商店)，各种命令行包管理器都可以通过它实现图形界面包管理器，同理的还有KDE桌面的plasma-discover(Discover软件管理中心)。
 
-* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。删除PPA仓库:`sudo add-apt-repository --remove ppaname`
+* Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。添加和删除PPA仓库:`sudo add-apt-repository <ppaname>`/`sudo add-apt-repository --remove <ppaname>`
 
 * Ubuntu .snap：命令行包管理器snap，专有图形界面包管理器snap-store。
 
