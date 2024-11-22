@@ -10,9 +10,7 @@
 * 3、游戏：steam和wine，Linux原生模拟器
 * ...
 
-## EX、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷笔记
-* 开机时按住shift+tab显示grub。按下e编辑：`rw init=/bin/bash`替换`ro Quiet Splash $vt_handoff`，之后可执行无密码root进行维护(如`passwd`修改root密码)。`exec /sbin/init`退出维护。
-* 将用户添加到sudoers组：`sudo deluser ywnz sudo`，将用户sudoers组删除：`usermod -a -G sudo suveng`。
+## EX1、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷笔记
 * 关于/usr：bin目录放可执行文件，lib目录放库文件，share目录放必要数据，由系统包管理器管理，安装的各种包都在这里；/usr/local里面的这三个目录由用户自己手动管理，放自行下载的程序，系统包管理器不管理；/home/users/.local：此处这三个目录是用户自己的目录，用户自己管理，自己使用。
 * 列举所有硬件：sudo lshw，查看网卡型号：`lspci | grep -i net`，查看蓝牙：`hciconfig -a`
 * 完善图形apt：安装apt图形管理工具新立得：`sudo apt install synaptic`
@@ -53,6 +51,12 @@
   `MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp;x-scheme-handler/chrome;video/webm;application/x-xpinstall;`
 
   `StartupNotify=true`
+
+## EX2、权限管理篇：
+* root是一个用户，对系统拥有最高权限：`root	ALL=(ALL:ALL) ALL`，sudo是一个root创建的用户组，该用户组下的所有用户可以申请root的权限来执行工作（%用于标识该名字是用户组，`ALL=(ALL:ALL) ALL`表示`主机=(用户:用户组) 命令`）：`%sudo	ALL=(ALL:ALL) ALL`。
+* 开机时按住shift+tab显示grub。按下e编辑：`rw init=/bin/bash`替换`ro Quiet Splash $vt_handoff`，之后可执行无密码root进行维护(如`passwd`修改root密码)。`exec /sbin/init`退出维护。
+* %sudo	ALL=(ALL:ALL) NOPASSWD:ALL
+* 将用户添加到sudo组：`sudo deluser ywnz sudo`，将用户sudoers组删除：`usermod -a -G sudo suveng`。
 
 ## 一、包管理篇：软件安装
 
