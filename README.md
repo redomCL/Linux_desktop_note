@@ -54,7 +54,7 @@
 
 ## EX2、权限管理篇：
 * root是一个用户，对系统拥有最高权限：`root	ALL=(ALL:ALL) ALL`，sudo是一个root创建的用户组，该用户组下的所有用户可以申请root的权限来执行工作（%用于标识该名字是用户组，`ALL=(ALL:ALL) ALL`表示`主机=(用户:用户组) 命令`）：`%sudo	ALL=(ALL:ALL) ALL`。
-* 因此，在操作系统中，如果希望用户以root权限免密码运行工作则改为：`%sudo	ALL=(ALL:ALL) NOPASSWD:ALL`。
+* 因此，在操作系统中，如果希望用户以root权限免密码运行工作则改为：`%sudo	ALL=(ALL:ALL) NOPASSWD:ALL`。但此时图形下运行需要root权限的工作仍然需要密码，尚未解决此问题。
 * 当用户不在sudo用户组，则无法以root权限工作（可能的提示是：用户名不在sudoers文件中），此时需要将用户添加到sudo用户组：`usermod -a -G sudo <users>`。同样的反推：将用户从sudo用户组删除：`sudo deluser <users> sudo`。
 * 各种情况导致失去root密码：开机时按住shift+tab显示grub。按下e编辑：`rw init=/bin/bash`替换`ro Quiet Splash $vt_handoff`，之后可执行无密码root进行维护(如`passwd`修改root密码)。`exec /sbin/init`刷新配置并退出维护。
 
