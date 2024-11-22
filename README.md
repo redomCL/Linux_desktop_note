@@ -141,17 +141,15 @@
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
 
-## 三、家用娱乐篇：影音、网络、游戏（转译的wine）
+## 三、家用娱乐篇：网络、影音、游戏（转译的wine）
 
 * 浏览器：火狐官方直接放出可执行程序，注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：
 
-  新标签打开搜索：`browser.search.openintab=true`
+  新标签打开搜索：`browser.search.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
 
   新标签打开链接：`browser.urlbar.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
 
-  新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`
-
-* 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv ， 当前默认设置在/.config/mpv。
+  新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`（如果安装了标签页优化组件则不需要修改此项）
 
 * P2P下载：qbittorrent是跨平台工具，Linux上提供了多个可执行格式。
 
@@ -160,6 +158,8 @@
 * 文件管理和smb网络共享：文件管理器nautilus，nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`，部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建软连接（symbolic link/快捷方式）。
 
 * 远程控制：ubuntu 23.10实际上已经内置远程控制并支持Windows的RDP协议，但在实际使用时，以Windows10 22H2为例并不能正常连接，提示"发生身份验证错误，有更多数据可用"，所以要通过sudo apt install tightvncserver xrdp命令安装xrdp实现。Linux的远程控制和Windows的登录思路有所不同，远程控制实际是使用用户在远程登录并控制电脑，在Linux中，远程控制不能注销当前本地已登录的用户，然后在远程重新登录以完成远程控制，因此远程控制如果想用当前本地已登陆的用户登陆，首先要确保这个用户已经在本地注销！否则远程控制失败。
+
+* 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv ， 当前默认设置在/.config/mpv。
 
 * 游戏（转译的wine）：待编辑...
 
