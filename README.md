@@ -59,7 +59,7 @@
 * 当用户不在sudo用户组，则无法以root权限工作（可能的提示是：用户名不在sudoers文件中），此时需要将用户添加到sudo用户组：`sudo usermod -a -G sudo <users>`。同样的反推：将用户从sudo用户组删除：`sudo deluser <users> sudo`。
 * 各种情况导致失去root密码：开机时按住shift+tab显示grub。按下e编辑：`rw init=/bin/bash`替换`ro Quiet Splash $vt_handoff`，之后可执行无密码root进行维护(如`passwd`修改root密码)。`exec /sbin/init`刷新配置并退出维护。
 
-## 一、包管理篇：软件安装
+## 一、包管理篇：软件安装（容器有权限问题（安全性））
 
 * Linux发行版不同于Windows的软件安装习惯，Linux发行版一般有自己的在线软件库（各国都有镜像源解决不能访问的问题），并通过搭配内置的包管理器（命令行/图形界面）进行管理，以下是一些用过的包管理器列举。
 
@@ -67,7 +67,7 @@
 
 * Debian/Ubuntu .deb：命令行包管理器apt，专有图形界面包管理器synaptic。添加和删除PPA仓库:`sudo add-apt-repository <ppaname>`/`sudo add-apt-repository --remove <ppaname>`
 
-* Ubuntu .snap：命令行包管理器snap，专有图形界面包管理器snap-store。
+* Ubuntu .snap：容器形式，命令行包管理器snap，专有图形界面包管理器snap-store。
 
 * RedHat/Fedora .RPM：命令行包管理器器dnf，默认使用图形包管理器gnome-software。
 
@@ -75,9 +75,9 @@
 
 * *executable：独立可执行程序，可能依赖cegui，.net，根据具体软件而定。
 
-* *fuse .appimage：用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意"fuse"对系统的破坏，注意可能需要"afuse"。
+* *fuse .appimage：容器形式，用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意"fuse"对系统的破坏，注意可能需要"afuse"。
 
-* *Flathub .flatpak：包含大量游戏模拟器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
+* *Flathub .flatpak：容器形式，包含大量游戏模拟器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
 
   `abi <abi/4.0>,`
 
