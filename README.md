@@ -69,7 +69,7 @@
 
 * Ubuntu .snap：容器形式，命令行包管理器snap，专有图形界面包管理器snap-store。
 
-* RedHat/Fedora .RPM：命令行包管理器器dnf，默认使用图形包管理器gnome-software。
+* RedHat/Fedora .RPM：命令行包管理器dnf，默认使用图形包管理器gnome-software。
 
 * openSUSE .RPM：命令行包管理器zypper，默认使用图形包管理器Yast2/Discover软件管理中心。
 
