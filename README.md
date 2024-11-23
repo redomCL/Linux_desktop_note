@@ -193,9 +193,9 @@
 
   * /etc/grub.d：grub管理工具在这里。
 
-  * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理工具脚本生成, 用于指导grubx64.efi引导。
+  * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理脚本执行`grub-install`命令生成, 用于指导grubx64.efi引导。
 
-  * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`工具生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
+  * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
