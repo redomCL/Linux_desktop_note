@@ -171,6 +171,10 @@
 
 * 在UEFI环境下，系统由UEFI寻找EFI程序来启动整个系统，在Grub作为引导菜单时，/boot/grub/grub.cfg是EFI的配置文件，但正确的做法不是直接编辑它，而是通过处于/etc/grub.d的脚本，根据/etc/default/grub的参数，使用`update-grub`或`grub-mkconfig`命令，对/boot/grub/grub.cfg进行配置。 待续...
 
+* /boot/efi/EFI/ubuntu/grub.cfg：efi分区中, 由`grub-install`命令生成, 指向/boot/grub/grub.cfg
+
+* /boot/grub/grub.cfg：root分区中,由`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 为引导起实际作用。
+
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
 ## 五、GNOME插件篇：GNOME桌面可以安装插件增强功能，以下是例举我个人必备的插件，（名为”扩展管理器“的软件是GNOME的插件管理面板，是核心工具）
