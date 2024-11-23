@@ -165,7 +165,7 @@
 
 * 游戏（转译的wine）：待编辑...
 
-## 四、Linux下的引导和轮转：正确的情况下，所有UEFI第一启动的都应该是ESP分区下/EFI/BOOT/bootx64.efi
+## 四、Linux下的引导和轮转：正确的情况下，所有UEFI第一启动的都应该是独立fat/fat32分区下/EFI/BOOT/bootx64.efi
 
 * 对标准的于Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI被挂载到了`/boot/efi`，对于标准的Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
 
