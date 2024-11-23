@@ -167,6 +167,24 @@
 
 ## 四、Linux下的引导和轮转：
 
+* UEFI->/boot/efi/EFI/BOOT/bootx64.efi(shimx64(有签名，可安全启动))。
+
+* bootx64.efi(大多是时候就是shimx64.efi,同一文件)：UEFI通常优先启动的EFI。
+
+* fbx64.efi：fallback/回退/保底引导，引导出问题时，bootx64会不停跳转fbx64.efi，由fbx64.efi枚举下一段引导并尝试创建、修复引导流程。
+
+* grubx64.efi：grub引导。
+
+* BOOTX64.CSV：指导fbx64.efi修复引导。
+
+* grub.cfg：指导grub引导。
+
+* 首次引导/引导出现问题：`UEFI->/EFI/boot/bootx64.efi(shimx64(有签名，可安全启动))->/EFI/boot/fbx64.efi->/EFI/OS(ex:Ubuntu)/BOOTX64.CSV->修复/创建引导`，重启后恢复普通引导。
+
+* 普通引导：`/EFI/OS(ex:Ubuntu)/shimx64.efi->/EFI/(ex:Ubuntu)/grubx64.efi->/EFI/myos/grub.cfg ->/boot/vmlinuz-*`。
+
+----
+
 * Linux现在在UEFI标准下使用GRUB2实现引导链。Windows从8开始在UEFI标准下下使用自己的bootmgfw实现引导链。目前bootmgfw不能跳转到GRUB2（Windows的引导加载Linux很麻烦），但是GRUB2支持跳转到bootmgfw（Linux的引导加载Windows），所以Linux和Windows真机共存一般是选择用GRUB2引导。`sudo GRUB_DISABLE_OS_PROBER=true`,`update-grub`命令可以允许GRUB2自动搜索其他操作系统，以此将Windows添加到GRUB2，之后详情可在Linux桌面发行版环境下使用图形工具GRUB Customize进行配置(`sudo add-apt-repository ppa:danielrichter2007/grub-customizer -y`)，比如引导菜单驻留时间、引导项、引导菜单界面定制。另注意一款引导修复工具：boot-repair（`sudo add-apt-repository ppa:yannubuntu/boot-repair`）。
 
 * 在UEFI环境下，系统由UEFI寻找EFI程序来启动整个系统，在Grub作为引导菜单时，/boot/grub/grub.cfg是EFI的配置文件，但正确的做法不是直接编辑它，而是通过处于/etc/grub.d的脚本，根据/etc/default/grub的参数，使用`update-grub`或`grub-mkconfig`命令，对/boot/grub/grub.cfg进行配置。 待续...
