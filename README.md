@@ -147,11 +147,11 @@
 
 * 浏览器：火狐官方直接放出可执行程序，注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：
 
-  新标签打开搜索：`browser.search.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
+  * 新标签打开搜索：`browser.search.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
 
-  新标签打开链接：`browser.urlbar.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
+  * 新标签打开链接：`browser.urlbar.openintab=true`（如果安装了标签页优化组件则不需要修改此项）
 
-  新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`（如果安装了标签页优化组件则不需要修改此项）
+  * 新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`（如果安装了标签页优化组件则不需要修改此项）
 
 * P2P下载：qbittorrent是跨平台工具，Linux上提供了多个可执行格式。
 
@@ -196,6 +196,22 @@
   * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理脚本执行`grub-install`命令生成, 用于指导grubx64.efi引导。
 
   * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
+ 
+  * grub.cfg丢失等引起开机进入grub的一个解决办法：
+
+    `ls`                                                    // 列举目录来找到系统所在的dev名字
+
+     `grub rescue>root=(hd0,msdos8)`
+
+     `grub rescue>prefix=/boot/grub`                         //grub路径设置
+
+     `grub rescue>set root=(hd0,msdos8)`
+
+     `grub rescue>set prefix=(hd0,msdos8)/boot/grub`
+
+     `grub rescue>insmod normal`                            //启动normal启动
+
+     `grub rescue>normal`
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
