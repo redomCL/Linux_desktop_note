@@ -195,7 +195,7 @@
 
   * /boot/efi/EFI/ubuntu/grub.cfg：efi分区中, 由`grub-install`命令生成, 用于指导grubx64.efi引导。
 
-  * /boot/grub/grub.cfg：root分区中,由`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi引导。
+  * /boot/grub/grub.cfg：root分区中,由`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
