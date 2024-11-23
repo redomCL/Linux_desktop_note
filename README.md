@@ -17,11 +17,11 @@
 * 关于/usr：bin目录放可执行文件，lib目录放库文件，share目录放必要数据，由系统包管理器管理，安装的各种包都在这里；/usr/local里面的这三个目录由用户自己手动管理，放自行下载的程序，系统包管理器不管理；/home/users/.local：此处这三个目录是用户自己的目录，用户自己管理，自己使用。
 * 完善图形apt：安装apt图形管理工具新立得：`sudo apt install synaptic`
 * 运行当前目录程序：./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行，`chmod +X ....`开启可执行程序权限。
-* 独立可执行程序：executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组建，注意区分afuse和fuse，总之，运行appimage要注意fuse，linux任何时候都要考虑依赖（类似windoiws运行库？）。
+* 独立可执行程序：executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组件，注意区分afuse和fuse，总之，运行appimage要注意fuse，linux任何时候都要考虑依赖（类似windoiws运行库？）。
 * 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：`sudo apt install ubuntu-desktop`,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
 * 安装flathub：flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
 * 注意ubuntu会包含专用闭源驱动：如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
-* nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`,部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
+* nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`,部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问Windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
 * 远程回家：ubuntu自带openvpn，直接导入配置文件然后输入密码即可。
 * 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可`sudo dmesg | grep -i blue`查找缺少问题，如遇到缺少固件，则进行补足`sudo cp ”缺失部分" /lib/xxx/xxx/`，`sudo modprobe -r btusb`，`sudo modprobe btusb`
 * 系统语言方面：在系统-区域与语言中，对语言全面设置中文，即可将所有软件默认语言处于中文状态，并且会包含中文输入法，fcitx只是一种输入法可以卸载，对于libreoffice安装后如果是英文，可以在包管理中搜索中文包。
@@ -56,7 +56,7 @@
   `StartupNotify=true`
 
 ## EX2、权限管理篇：在介绍包管理前记录一些权限管理的笔记
-* root是一个用户，对系统拥有最高权限：`root	ALL=(ALL:ALL) ALL`，sudo是一个root创建的用户组，该用户组下的所有用户可以申请root的权限来执行工作（%用于标识该名字是用户组，`ALL=(ALL:ALL) ALL`表示`主机=(用户:用户组) 命令`）：`%sudo	ALL=(ALL:ALL) ALL`。查看用户的权限：`sudo -l -U user_name`,查看用户所在组：`groups user_name`，列举sudo用户组的用户：`getent group sudo`。
+* root是一个用户，对系统拥有最高权限：`root	ALL=(ALL:ALL) ALL`，sudo是一个root创建的用户组，该用户组下的所有用户可以申请root的权限来执行工作（%用于标识该名字是用户组，没有%代表用户`root ALL=(ALL:ALL) ALL`表示`root用户 能够在哪个主机=(切换哪个用户:切换哪个用户组) 执行哪个命令`；同理组则是：`%sudo	ALL=(ALL:ALL) ALL`。查看用户的权限：`sudo -l -U user_name`,查看用户所在组：`groups user_name`，列举sudo用户组的用户：`getent group sudo`。
 * 因此，在操作系统中，如果希望用户以root权限免密码运行工作则改为：`%sudo	ALL=(ALL:ALL) NOPASSWD:ALL`。但此时图形下运行需要root权限的工作仍然需要密码，尚未解决此问题。
 * 当用户不在sudo用户组，则无法以root权限工作（可能的提示是：用户名不在sudoers文件中），此时需要将用户添加到sudo用户组：`sudo usermod -a -G sudo <users>`。同样的反推：将用户从sudo用户组删除：`sudo deluser <users> sudo`。
 * 各种情况导致失去root密码：开机时按住shift+tab显示grub。按下e编辑：`rw init=/bin/bash`替换`ro Quiet Splash $vt_handoff`，之后可执行无密码root进行维护(如`passwd`修改root密码)。`exec /sbin/init`刷新配置并退出维护。
