@@ -201,17 +201,17 @@
 
      `ls`// 列举目录来找到系统所在的dev名字(hd?,gpt?)
 
-     `grub rescue>root=(hd?,gpt?)`
+     `grub >root=(hd?,gpt?)`
 
-     `grub rescue>prefix=/boot/grub`//grub路径设置
+     `grub >prefix=/boot/grub`//grub路径设置
 
-     `grub rescue>set root=(hd?,gpt?)`
+     `grub >set root=(hd?,gpt?)`
 
-     `grub rescue>set prefix=(hd?,gpt?)/boot/grub`
+     `grub >set prefix=(hd?,gpt?)/boot/grub`
 
-     `grub rescue>insmod normal`//启动normal启动
+     `grub >insmod normal`//启动normal启动
 
-     `grub rescue>normal`
+     `grub >normal`
 
    * 如果进入了系统选单，之后还是弹出grub:
 
