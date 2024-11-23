@@ -165,7 +165,7 @@
 
 * 游戏（转译的wine）：待编辑...
 
-## 四、Linux下的引导和轮转：
+## 四、Linux下的引导和轮转：正确的情况下，所有UEFI第一启动的都应该是ESP分区下/EFI/BOOT/bootx64.efi
 
 * UEFI->/boot/efi/EFI/BOOT/bootx64.efi(shimx64(有签名，可安全启动))。
 
