@@ -191,11 +191,11 @@
 
 * 在UEFI环境下，系统由UEFI寻找EFI程序来启动整个系统，在Grub作为引导菜单时，/boot/grub/grub.cfg是EFI的配置文件，但正确的做法不是直接编辑它，而是通过处于/etc/grub.d的脚本，根据/etc/default/grub的参数，使用`update-grub`或`grub-mkconfig`命令，对/boot/grub/grub.cfg进行配置。 待续...如下：
 
-  * /etc/grub.d，grub更新脚本。
+  * /etc/grub.d：grub管理工具在这里。
 
-  * /boot/efi/EFI/ubuntu/grub.cfg：efi分区中, 由`grub-install`命令生成, 用于指导grubx64.efi引导。
+  * /boot/efi/EFI/ubuntu/grub.cfg：efi分区中, 由grub.d下的管理工具脚本生成, 用于指导grubx64.efi引导。
 
-  * /boot/grub/grub.cfg：root分区中,由`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
+  * /boot/grub/grub.cfg：由grub.d下的管理脚本执行`update-grub`工具生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
