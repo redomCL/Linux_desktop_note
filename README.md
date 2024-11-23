@@ -165,7 +165,7 @@
 
 * 游戏（转译的wine）：待编辑...
 
-## 四、Linux下的引导和轮转：正确的情况下，所有UEFI第一启动的都应该是独立fat/fat32分区下/EFI/BOOT/bootx64.efi
+## 四、Linux下的引导、轮转与修复：默认情况下，所有UEFI第一启动的都应该是独立fat/fat32分区下/EFI/BOOT/bootx64.efi，高端UEFI可以自行浏览并启动任何位置的`.efi`程序
 
 * 对标准的于Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI被挂载到了`/boot/efi`，对于标准的Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
 
@@ -213,7 +213,7 @@
 
      `grub rescue>normal`
 
-     * 如果进入了系统选单，之后还是弹出grub:
+   * 如果进入了系统选单，之后还是弹出grub:
 
      `grub >set root=(hd?,gpt?)`
 
@@ -224,6 +224,10 @@
      `grub >initrd /initrd.img-xxx-xxx`//xxxx是上述补全的对应版本
 
      `grub >boot`
+
+   * 能够正常进入系统后，进入丢失grub.cfg的目录（一般是/boot/efi/EFI/你的系统名（如ubuntu）/）:
+ 
+     `sudo grub-install`,或直接`sudo grub-install /boot/efi/EFI/ubuntu/`，修复完成。
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
