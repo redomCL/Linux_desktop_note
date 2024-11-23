@@ -5,10 +5,10 @@
 
 # 前言：
 * 目前Linux桌面发行版的发展相比Windows真的不适合日常家用娱乐，易用性要差的相当多；当然了，Linux桌面发行版目前的软件生态也真的满纯粹，绝大多数软件都可以默认安装，没有广告没有额外的骚扰，不需要像Windows一样每接触新的软件都要特别小心怕被捆绑等其他骚扰，目前Linux桌面发行版的软件生态问题主要还是1.软件不够，大多数厂商因为利益关系都没有动力在Linux桌面发行版上发布较新的家用软件；2.虽然有开源软件，但是这种非利益驱动下的软件表现参差不齐，有功能和界面都很差的，也有功能强大界面极其粗糙的，对普通家用用户来说非常不友好；3.Linux桌面发行版非常碎片，各种包管理器和图形化软件商店以及各种桌面眼花缭乱，另外个人虽然觉得各种桌面很华丽，但是手感上觉得是不如Windows的，无论是GNOME还是KDE，都有一种边界判定不清晰，“粘手”的感觉；4.依赖问题相当头大，相应的解决办法就是依靠包管理器，但是就像3中所说的，包管理器本身都相当碎片。以上，但为了不完全依赖商业形式运转的Windows操作系统这种独（毒？）苗，我还是尽可能的去了解一下Linux桌面发行版，本合集是Linux桌面发行版为了日常家用娱乐为主的笔记。 具体主要用途：
-* 1、网络通讯：微信、QQ、跨平台的优秀浏览器firefox
-* 2、家庭影音：主要以跨平台的优秀播放器mpv为主，也可以用基于mpv的gnome mpv、smplayer
-* 3、游戏：steam和wine，Linux原生模拟器
-* ...
+  * 1、网络通讯：微信、QQ、跨平台的优秀浏览器firefox
+  * 2、家庭影音：主要以跨平台的优秀播放器mpv为主，也可以用基于mpv的gnome mpv、smplayer
+  * 3、游戏：steam和wine，Linux原生模拟器
+  * 待续...
 
 ## EX1、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷部署笔记
 * 列举所有硬件：`sudo lshw`，查看网卡型号：`lspci | grep -i net`，查看蓝牙：`hciconfig -a`
@@ -199,19 +199,31 @@
  
   * grub.cfg丢失等引起开机进入grub的一个解决办法：
 
-    `ls`                                                    // 列举目录来找到系统所在的dev名字
+     `ls`// 列举目录来找到系统所在的dev名字(hd?,gpt?)
 
-     `grub rescue>root=(hd0,msdos8)`
+     `grub rescue>root=(hd?,gpt?)`
 
-     `grub rescue>prefix=/boot/grub`                         //grub路径设置
+     `grub rescue>prefix=/boot/grub`//grub路径设置
 
-     `grub rescue>set root=(hd0,msdos8)`
+     `grub rescue>set root=(hd?,gpt?)`
 
-     `grub rescue>set prefix=(hd0,msdos8)/boot/grub`
+     `grub rescue>set prefix=(hd?,gpt?)/boot/grub`
 
-     `grub rescue>insmod normal`                            //启动normal启动
+     `grub rescue>insmod normal`//启动normal启动
 
      `grub rescue>normal`
+
+     * 如果进入了系统选单，之后还是弹出grub:
+
+     `grub >set root=(hd?,gpt?)`
+
+     `grub >set prefix=(hd?,gpt?)/boot/grub`
+
+     `grub >linux /vmlinuz-xxx-xxx root=/dev/sda?`//xxxx按Tab键，补全对应版本
+
+     `grub >initrd /initrd.img-xxx-xxx`//xxxx是上述补全的对应版本
+
+     `grub >boot`
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
