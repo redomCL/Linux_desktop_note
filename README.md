@@ -167,11 +167,13 @@
 
 ## 四、Linux下的引导和轮转：正确的情况下，所有UEFI第一启动的都应该是ESP分区下/EFI/BOOT/bootx64.efi
 
-* UEFI->/boot/efi/EFI/BOOT/bootx64.efi(shimx64(有签名，可安全启动))。
+* 对标准的于Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI被挂载到了`/boot/efi`，对于标准的Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
 
 * bootx64.efi(大多是时候就是shimx64.efi,同一文件)：UEFI通常优先启动的EFI。
 
 * fbx64.efi：fallback/回退/保底引导，引导出问题时，bootx64会不停跳转fbx64.efi，由fbx64.efi枚举下一段引导并尝试创建、修复引导流程。
+
+* mmx64.efi，如果开启了安全启动，且bootx64.efi没有正确签名，则由mmx64.efi进行签名处理，详情位置，待续...
 
 * grubx64.efi：grub引导。
 
