@@ -127,7 +127,7 @@
 
 * 3、Linux下英伟达有个控制面板叫做NVIDIA X Server Settings，需要注意的是双显卡笔记本（核显+独立N卡）这种要安装prime-select然后prime-select nvidia让N卡独立工作才可以解决各种奇奇怪怪的问题，比如全屏撕裂问题。
 
-* 英伟达新的闭源驱动开始逐渐支持wayland，但是也可能有各种问题，在基于GNOME桌面环境的Ubuntu中，注意/usr/lib/udev/rules.d/61-gdm.rules这个文件，它在影响wayland和x11之间的切换。 
+* 英伟达新的闭源驱动开始逐渐支持wayland，但是也可能有各种问题，在基于GNOME桌面环境的Ubuntu中，注意/usr/lib/udev/rules.d/61-gdm.rules这个文件，它在影响wayland和x11之间的切换。 似乎从525版本开始支持VRR，gnome下通过`gsettings set org.gnome.mutter experimental-features "['variable-refresh-rate']"`命令开启VRR适配，目前尚未验证。
 
 ### 英特尔显卡篇
 
