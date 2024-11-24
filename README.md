@@ -12,7 +12,7 @@
 
 ## EX1、快速运行篇&系统设置完善篇：在介绍包管理前记录一些快捷部署笔记
 * 列举所有硬件：`sudo lshw`，查看网卡型号：`lspci | grep -i net`，查看蓝牙：`hciconfig -a`
-* 分区工具：fdisk
+* 分区工具：fdisk（多注意/etc/fstab问题，此文件负责设备挂载）
 * 系统迁移工具：DD、partclone.<文件系统名>
 * 关于/usr：bin目录放可执行文件，lib目录放库文件，share目录放必要数据，由系统包管理器管理，安装的各种包都在这里；/usr/local里面的这三个目录由用户自己手动管理，放自行下载的程序，系统包管理器不管理；/home/users/.local：此处这三个目录是用户自己的目录，用户自己管理，自己使用。
 * 完善图形apt：安装apt图形管理工具新立得：`sudo apt install synaptic`
