@@ -169,7 +169,7 @@
 
 * 对标准的于Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI被挂载到了`/boot/efi`，对于标准的Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
 
-* bootx64.efi(大多是时候就是shimx64.efi,同一文件)：UEFI通常优先启动的EFI。
+* bootx64.efi(大多时候就是shimx64.efi,同一文件改名)：UEFI通常优先启动的EFI。
 
 * fbx64.efi：fallback/回退/保底引导，引导出问题时，bootx64会不停跳转fbx64.efi，由fbx64.efi枚举下一段引导并尝试创建、修复引导流程。
 
@@ -181,9 +181,9 @@
 
 * grub.cfg：指导grub引导。
 
-* 首次引导/引导出现问题：`UEFI->/EFI/boot/bootx64.efi(shimx64(有签名，可安全启动))->/EFI/boot/fbx64.efi->/EFI/OS(ex:Ubuntu)/BOOTX64.CSV->修复/创建引导`，重启后恢复普通引导。
+* 首次引导/引导出现问题：`UEFI->~/EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动))->~/EFI/boot/fbx64.efi->/EFI/OS(ex:Ubuntu)/BOOTX64.CSV->修复/创建引导`，重启后恢复普通引导。
 
-* 普通引导：`/EFI/OS(ex:Ubuntu)/shimx64.efi->/EFI/(ex:Ubuntu)/grubx64.efi->/EFI/myos/grub.cfg ->/boot/vmlinuz-*`。
+* 普通引导：`~/EFI/OS(ex:Ubuntu)/shimx64.efi->/EFI/(ex:Ubuntu)/grubx64.efi->/EFI/myos/grub.cfg ->/boot/vmlinuz-*`。
 
 ----
 
