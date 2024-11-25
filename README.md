@@ -165,11 +165,11 @@
 
 * 游戏（转译的wine）：待编辑...
 
-## 四、Linux下的引导、轮转与修复：默认情况下，所有UEFI第一启动的都应该是独立fat/fat32分区下/EFI/BOOT/bootx64.efi，高端UEFI可以自行浏览并启动任何位置的`.efi`程序
+## 四、Linux下的引导、轮转与修复：UEFI直接读取硬盘启动时读取fat/fat32分区下/EFI/BOOT/bootx64.efi，高级的UEFI可以自行浏览并启动任何位置的`.efi`程序
 
-* 对标准的于Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI被挂载到了`/boot/efi`，对于标准的Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
+* 对于的Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI独立分区被挂载到了`/boot/efi`，对于Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
 
-* bootx64.efi(大多时候就是shimx64.efi,同一文件改名)：UEFI通常优先启动的EFI。
+* bootx64.efi(大多时候就是shimx64.efi,同一文件改名)：UEFI直接读取硬盘启动时的默认引导名，具体的bootx64.efi由操作系统来提供。一般的系统会将一个引导重命名为`bootx64.efi`和`xxxxx.efi`(具体名字根据具体系统而定)，`bootx64.efi`放置在~/EFI/boot/，`xxxxx.efi`放置在~/EFI/OS(ex:Ubuntu)。
 
 * fbx64.efi：fallback/回退/保底引导，引导出问题时，bootx64会不停跳转fbx64.efi，由fbx64.efi枚举下一段引导并尝试创建、修复引导流程。
 
@@ -179,11 +179,11 @@
 
 * BOOTX64.CSV：指导fbx64.efi修复引导。
 
-* grub.cfg：指导grub引导。
+* grub.cfg：指导grubx64.efi引导。
 
-* 首次引导/引导出现问题：`UEFI-> ~/EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动)) -> ~/EFI/boot/fbx64.efi -> /EFI/OS(ex:Ubuntu)/BOOTX64.CSV -> 修复/创建引导`，重启后恢复普通引导。
+* 首次引导/引导出现问题：`UEFI-> ~/EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动)) -> ~/EFI/boot/fbx64.efi -> /EFI/OS(ex:Ubuntu)/BOOTX64.CSV -> 修复/创建引导启动项`，重启后恢复普通引导。
 
-* 普通引导：`UEFI-> ~/EFI/OS(ex:Ubuntu)/shimx64.efi -> ~/EFI/OS(ex:Ubuntu)/grubx64.efi -> ~/EFI/OS(ex:Ubuntu)/grub.cfg -> /boot/grub/grub.cfg -> /boot/vmlinuz-*`。
+* 普通引导：`UEFI -> 创建的引导启动项，如：~/EFI/OS(ex:Ubuntu)/shimx64.efi -> ~/EFI/OS(ex:Ubuntu)/grubx64.efi -> ~/EFI/OS(ex:Ubuntu)/grub.cfg -> /boot/grub/grub.cfg -> /boot/vmlinuz-*`。
 
 ----
 
