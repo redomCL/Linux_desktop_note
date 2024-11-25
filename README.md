@@ -181,9 +181,9 @@
 
 * grub.cfg：指导grubx64.efi引导。
 
-* 首次引导/引导出现问题：`UEFI-> ~/EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动)) -> ~/EFI/boot/fbx64.efi -> /EFI/OS(ex:Ubuntu)/BOOTX64.CSV -> 修复/创建引导启动项`，重启后恢复普通引导。
+* 首次引导/引导出现问题：`UEFI-> fat/fat32分区 -> /EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动)) -> fat/fat32分区 -> /EFI/boot/fbx64.efi -> /EFI/OS(ex:Ubuntu)/BOOTX64.CSV -> 修复/创建引导启动项`，重启后恢复普通引导。
 
-* 普通引导：`UEFI -> 创建的引导启动项，如：~/EFI/OS(ex:Ubuntu)/shimx64.efi -> ~/EFI/OS(ex:Ubuntu)/grubx64.efi -> ~/EFI/OS(ex:Ubuntu)/grub.cfg -> /boot/grub/grub.cfg -> /boot/vmlinuz-*`。
+* 普通引导：`UEFI -> 创建的引导启动项，如： fat/fat32分区 -> /EFI/OS(ex:Ubuntu)/shimx64.efi ->  fat/fat32分区 -> /EFI/OS(ex:Ubuntu)/grubx64.efi ->  fat/fat32分区 -> /EFI/OS(ex:Ubuntu)/grub.cfg -> /boot/grub/grub.cfg -> /boot/vmlinuz-*`。
 
 ----
 
