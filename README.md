@@ -192,10 +192,12 @@
 * 在UEFI环境下，系统由UEFI寻找EFI程序来启动整个系统，在Grub作为引导菜单时，/boot/grub/grub.cfg是EFI的配置文件，但正确的做法不是直接编辑它，而是通过处于/etc/grub.d的脚本，根据/etc/default/grub的参数，使用`update-grub`或`grub-mkconfig`命令，对/boot/grub/grub.cfg进行配置。 待续...如下：
 
   * /etc/grub.d：grub管理工具在这里。
+ 
+  * /etc/default/grub，修改这里，然后使用grub管理工具更新到fat/fat32分区的grub配置文件中以及内核中。
 
-  * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理脚本执行`grub-install`命令生成, 用于指导`~/EFI/OS(ex:Ubuntu)/grubx64.efi`引导，会将`~/EFI/OS(ex:Ubuntu)/grubx64.efi`指向/boot/grub/grub.cfg，然后进一步引导系统。
+  * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理脚本执行`grub-install`命令生成, 用于指导`~/EFI/OS(ex:Ubuntu)/grubx64.efi`引导，会将`fat/fat32分区/EFI/OS(ex:Ubuntu)/grubx64.efi`指向/boot/grub/grub.cfg，然后进一步引导系统。
 
-  * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`命令生成(根据 /etc/default/grub和/etc/grub.d) ，用于进一步指导`~/EFI/OS(ex:Ubuntu)/grubx64.efi`，同时也在回退中指导`~/EFI/boot/fbx64.efi`（主要由该efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
+  * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`命令生成(根据/etc/default/grub和/etc/grub.d) ，用于进一步指导`fat/fat32分区/EFI/OS(ex:Ubuntu)/grubx64.efi`，同时也在回退中指导`fat/fat32分区/EFI/boot/fbx64.efi`（主要由该efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
  
   * grub.cfg丢失等引起开机进入grub的一个解决办法：
 
