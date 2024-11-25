@@ -181,9 +181,9 @@
 
 * grub.cfg：指导grub引导。
 
-* 首次引导/引导出现问题：`UEFI->~/EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动))->~/EFI/boot/fbx64.efi->/EFI/OS(ex:Ubuntu)/BOOTX64.CSV->修复/创建引导`，重启后恢复普通引导。
+* 首次引导/引导出现问题：`UEFI-> ~/EFI/boot/bootx64.efi(shimx64(如果有签名，则可安全启动)) -> ~/EFI/boot/fbx64.efi -> /EFI/OS(ex:Ubuntu)/BOOTX64.CSV -> 修复/创建引导`，重启后恢复普通引导。
 
-* 普通引导：`~/EFI/OS(ex:Ubuntu)/shimx64.efi->/EFI/(ex:Ubuntu)/grubx64.efi->/EFI/myos/grub.cfg ->/boot/vmlinuz-*`。
+* 普通引导：`UEFI-> ~/EFI/OS(ex:Ubuntu)/shimx64.efi -> ~/EFI/OS(ex:Ubuntu)/grubx64.efi -> ~/EFI/OS(ex:Ubuntu)/grub.cfg -> /boot/grub/grub.cfg -> /boot/vmlinuz-*`。
 
 ----
 
@@ -193,9 +193,9 @@
 
   * /etc/grub.d：grub管理工具在这里。
 
-  * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理脚本执行`grub-install`命令生成, 用于指导grubx64.efi引导。
+  * /boot/efi/EFI/ubuntu/grub.cfg：在efi分区中, 由grub.d下的管理脚本执行`grub-install`命令生成, 用于指导`~/EFI/OS(ex:Ubuntu)/grubx64.efi`引导，会将`~/EFI/OS(ex:Ubuntu)/grubx64.efi`指向/boot/grub/grub.cfg，然后进一步引导系统。
 
-  * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`命令生成, (根据 /etc/default/grub和/etc/grub.d) 用于指导fbx64.efi（主要由fbx64.efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
+  * /boot/grub/grub.cfg：在/分区中，由grub.d下的管理脚本执行`update-grub`命令生成(根据 /etc/default/grub和/etc/grub.d) ，用于进一步指导`~/EFI/OS(ex:Ubuntu)/grubx64.efi`，同时也在回退中指导`~/EFI/boot/fbx64.efi`（主要由该efi枚举过程中发现，并非特指）引导或在MBR下指导引导。
  
   * grub.cfg丢失等引起开机进入grub的一个解决办法：
 
