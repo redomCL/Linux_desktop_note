@@ -168,15 +168,14 @@
 * 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv ， 当前默认设置在/.config/mpv。
 
 * 游戏（转译的wine）：wine日新月异，在此简略记录，仅记录部署过程：
-  * 1. 确保这些工具在（dirmngr、ca-certificates、curl、software-properties-common、apt-transport-https）：所以安装一次`sudo apt install dirmngr ca-certificates curl software-properties-common apt-transport-https`
+  * 1.确保这些工具在（dirmngr、ca-certificates、curl、software-properties-common、apt-transport-https）：所以安装一次`sudo apt install dirmngr ca-certificates curl software-properties-common apt-transport-https`
   * 2.兼容32位`sudo dpkg --add-architecture i386`
   * 3.安装Wine仓库的密钥：`curl -s https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor | sudo tee /usr/share/keyrings/winehq.gpg > /dev/null`
   * 4.添加Wine仓库并刷新仓库：`echo deb [signed-by=/usr/share/keyrings/winehq.gpg] http://dl.winehq.org/wine-builds/ubuntu/ $(lsb_release -cs) main | sudo tee /etc/apt/sources.list.d/winehq.list`，`sudo apt update`
-  * 5.刷新新仓库后安装Wine(稳定版winehq-stable/预发布版winehq-staging/开发版winehq-devel，各种版本自选)：`sudo apt install --install-recommends winehq-staging`
-  * 6.弹出Wine配置界面，`winecfg`，一般会提示安装Windows MOMO，如果因为各种原因没有安装成功，后续使用wintricks也可以完善环境：`sudo apt install winetricks`，一些wintricks快速完善环境的命令，如：`winetricks vcrun2022`，`winetricks allfonts corefonts cjkfonts`，尤其注意中文乱码：`winetricks cjkfonts`，其他字体问题尝试：`winetricks riched20 riched30`
-`winetricks d3dx9 d3dx10`，对于具体需要哪些环境，对于Windows已经很了解，此处省略。
-  * 7.Wine使用前缀/容器（Prefix）来隔离不同的应用程序环境。默认容器路径为~/.wine。如果需要创建一个新的自定义环境，可以使用：`WINEPREFIX=<> winecfg`，纯净的32位前缀环境使用：`WINEARCH=win32 WINEPREFIX=<> .wine32 winecfg`,创建支持中文的：`WINEPREFIX=<> LC_ALL=zh_CN.UTF-8 winecfg`，实际上路径都建议创建在/home/你所在的用户目录。以上操作创建后缀在安装winetricks后也可以在图形界面下操作。
-  * 8.卸载Wine：`sudo apt remove winehq-staging`，移除WineHQ仓库：`sudo rm /etc/apt/sources.list.d/winehq.list`，删除 GPG 密钥：`sudo rm /usr/share/keyrings/winehq.gpg`。
+  * 5.刷新仓库后安装Wine(稳定版winehq-stable/预发布版winehq-staging/开发版winehq-devel，各种版本自选)：`sudo apt install --install-recommends winehq-staging`
+  * 6.弹出Wine配置界面，`winecfg`，一般会提示安装Windows MOMO，如果因为各种原因没有安装成功，后续使用wintricks也可以完善环境：`sudo apt install winetricks`，一些wintricks快速完善环境的命令，如：`winetricks vcrun2022`，`winetricks allfonts corefonts cjkfonts`，`winetricks d3dx9 d3dx10`，尤其注意中文乱码：`winetricks cjkfonts`，其他字体问题尝试：`winetricks riched20 riched30`，对于具体需要哪些环境，对于Windows已经很了解，此处省略。
+  * 7.Wine使用前缀/容器（Prefix）来隔离不同的应用程序环境。默认有一个容器，路径在~/.wine。创建新容器使用：`WINEPREFIX=<> winecfg`，纯净的32位容器使用：`WINEARCH=win32 WINEPREFIX=<> .wine32 winecfg`，创建支持中文的带上`LC_ALL=zh_CN.UTF-8`，即：`WINEPREFIX=<> LC_ALL=zh_CN.UTF-8 winecfg`，实际上路径都建议创建在/home/你所在的用户目录。以上操作创建后缀在安装winetricks后也可以在图形界面下操作。
+  * 8.最后的可逆：卸载Wine：`sudo apt remove winehq-staging`，移除WineHQ仓库：`sudo rm /etc/apt/sources.list.d/winehq.list`，删除 GPG 密钥：`sudo rm /usr/share/keyrings/winehq.gpg`。
 
 ## 四、Linux下的引导、轮转与修复：UEFI直接读取硬盘启动时读取fat/fat32分区下/EFI/BOOT/bootx64.efi，高级的UEFI可以自行浏览并启动任何位置的`.efi`程序
 
