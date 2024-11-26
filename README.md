@@ -107,7 +107,7 @@
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/flathub部署3.png)
 
-## 二、Linux显卡驱动篇：第三方显卡驱动库：ppa:graphics-drivers/ppa，由于AMD显卡方面在Linux上开源，所以在Linux上显卡我更偏向于使用AMD而不是英伟达
+## 二、Linux显卡驱动篇：由于AMD显卡方面在Linux上开源，所以在Linux上显卡我更偏向于使用AMD而不是英伟达
 
 ### AMD显卡篇
 
@@ -119,7 +119,7 @@
 
 * 3、AMDVLK开源驱动：AMD的开源驱动项目，貌似可以更持久的维护显卡，但是只支持RX400及以上的显卡，更老的显卡没有办法使用。
 
-### 英伟达显卡篇
+### 英伟达显卡篇：可添加显卡驱动库：ppa:graphics-drivers/ppa
 
 * 1、英伟达官方闭源驱动：拓展名为.run的官方驱动，安装该驱动要屏蔽掉Nouveua开源驱动，否则冲突，经过测试英伟达官方驱动在安装时一般会自动进行屏蔽（加入黑名单处理），如果未处理请手动添加，关键词：blacklist。官方驱动更新频率不错，经过测试对游戏和模拟器效率要更好，但是因为某些我不懂的原因，Linus祖师爷表示F**K NVIDIA!开机登陆界面，右下角齿轮可切换x11/wayland。
 
