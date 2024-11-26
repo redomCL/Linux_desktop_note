@@ -121,6 +121,8 @@
 
 ### 英伟达显卡篇：可添加显卡驱动库：ppa:graphics-drivers/ppa
 
+* 一些黑名单配置：`/etc/modprobe.d/blacklist.conf`内可添加nouveau黑名单`blacklist nouveau`，`/usr/lib/modprobe.d`，`/etc/modprobe.d`可添加nouveau黑名单（nvidia-installer-disable-nouveau.conf），为什么有这么多黑名单机制尚不清楚。
+
 * 1、英伟达官方闭源驱动：拓展名为.run的官方驱动，安装该驱动要屏蔽掉Nouveua开源驱动，否则冲突，经过测试英伟达官方驱动在安装时一般会自动进行屏蔽（加入黑名单处理），如果未处理请手动添加，关键词：blacklist。官方驱动更新频率不错，经过测试对游戏和模拟器效率要更好，但是因为某些我不懂的原因，Linus祖师爷表示F**K NVIDIA!开机登陆界面，右下角齿轮可切换x11/wayland。
 
 * 2、Nouveau：英伟达非官方开源驱动，英伟达似乎并不认可，经过测试对游戏和模拟器效率不如官方驱动，不过日常功能都算尚可，安装Ubuntu时作为N卡的默认驱动。
