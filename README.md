@@ -179,7 +179,7 @@
   * 9.随着wine和linux更新，最终部署步骤应以官网为准：https://www.winehq.org/
  
 * docker：
-  *以官网部署教程为准：https://www.docker.com/，docker镜像商店可能需要挂代理才能访问，docker desktop访问商店如果不出现结果同理。docker下的qb必须填写要求的端口才能正常访问，如何修改要求目前探索中...
+  * 以官网部署教程为准：https://www.docker.com/，docker镜像商店可能需要挂代理才能访问，docker desktop访问商店如果不出现结果同理。docker下的qb必须填写要求的端口才能正常访问，如何修改要求目前探索中...
 
 ## 四、Linux下的引导、轮转与修复：UEFI直接读取硬盘启动时读取fat/fat32分区下/EFI/BOOT/bootx64.efi，高级的UEFI可以自行浏览并启动任何位置的`.efi`程序
 
