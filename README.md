@@ -79,7 +79,7 @@
 
 * *fuse .appimage：容器形式，用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意"fuse"对系统的破坏，注意可能需要"afuse"。
 
-* *Flathub .flatpakref：命令行包管理器flatpak，容器形式，包含大量游戏模拟器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
+* *Flathub .flatpakref：命令行包管理器flatpak，容器形式，包含大量游戏仿真器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
 
   `abi <abi/4.0>,`
 
@@ -125,9 +125,9 @@
 
 * /etc/gdm3/custom.conf可禁用wayland`WaylandEnable=false`
 
-* 1、英伟达官方闭源驱动：拓展名为.run的官方驱动，安装该驱动要屏蔽掉Nouveua开源驱动，否则冲突，经过测试英伟达官方驱动在安装时一般会自动进行屏蔽（加入黑名单处理），如果未处理请手动添加，关键词：blacklist。官方驱动更新频率不错，经过测试对游戏和模拟器效率要更好，但是因为某些我不懂的原因，Linus祖师爷表示F**K NVIDIA!开机登陆界面，右下角齿轮可切换x11/wayland。
+* 1、英伟达官方闭源驱动：拓展名为.run的官方驱动，安装该驱动要屏蔽掉Nouveua开源驱动，否则冲突，经过测试英伟达官方驱动在安装时一般会自动进行屏蔽（加入黑名单处理），如果未处理请手动添加，关键词：blacklist。官方驱动更新频率不错，经过测试对游戏和仿真器效率要更好，但是因为某些我不懂的原因，Linus祖师爷表示F**K NVIDIA!开机登陆界面，右下角齿轮可切换x11/wayland。
 
-* 2、Nouveau：英伟达非官方开源驱动，英伟达似乎并不认可，经过测试对游戏和模拟器效率不如官方驱动，不过日常功能都算尚可，安装Ubuntu时作为N卡的默认驱动。
+* 2、Nouveau：英伟达非官方开源驱动，英伟达似乎并不认可，经过测试对游戏和仿真器效率不如官方驱动，不过日常功能都算尚可，安装Ubuntu时作为N卡的默认驱动。
 
 * 3、Linux下英伟达有个控制面板叫做NVIDIA X Server Settings，需要注意的是双显卡笔记本（核显+独立N卡）这种要安装prime-select然后prime-select nvidia让N卡独立工作才可以解决各种奇奇怪怪的问题，比如全屏撕裂问题。
 
