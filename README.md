@@ -151,7 +151,7 @@
 
 * 浏览器：火狐官方直接放出可执行程序，注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：
 
-  * 关闭最后一个标签不会关闭浏览器：`browser.tabs.closeWindowWithLastTab`
+  * 关闭最后一个标签不会关闭浏览器：`browser.tabs.closeWindowWithLastTab=false`
 
   * 新标签打开搜索：`browser.search.openintab=true`
 
