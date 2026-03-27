@@ -153,11 +153,11 @@
 
   * 关闭最后一个标签不会关闭浏览器：`browser.tabs.closeWindowWithLastTab=false`
 
-  * 新标签打开搜索：`browser.search.openintab=true`
-
-  * 新标签打开链接：`browser.urlbar.openintab=true`
-
   * 新标签打开书签：`browser.tabs.loadBookmarksInTabs=true`
+ 
+  * 新标签打开搜索：`browser.search.openintab=true`
+ 
+  * 当前标签页打开地址栏链接：`browser.urlbar.openintab=false`
 
 * P2P下载：qbittorrent是跨平台工具，Linux上提供了多个可执行格式。
 
