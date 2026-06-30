@@ -22,6 +22,7 @@
 * 安装flathub：flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
 * 注意ubuntu会包含专用闭源驱动：如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
 * nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`,部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问Windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
+* Thunar设置samba共享：1、分别安装好samba和zenity：sudo install samba zenity，2、设置samba-sambashare组件的用户和密码为当前系统用户：sudo usermod -aG sambashare $(whoami)、sudo smbpasswd -a $(whoami)，3、在Thunar文件管理器中配置共享相关按钮，点击编辑->配置自定义动作，名字自取；（1）设置共享命令：net usershare add %n %f “” len:F guest_ok=n && chmod 700 %f；（2）设置取消共享命令：net usershare delete %n；（3）设置显示当前共享的目录：ls -1 /var/lib/samba/usershares/ | zenity --text-info --title="当前已共享的目录"
 * 远程回家：ubuntu自带openvpn，直接导入配置文件然后输入密码即可。
 * 蓝牙：专用驱动虽然在ubuntu中已经包含，但实际仍可能有问题，对于搜索不到设备的情况，可`sudo dmesg | grep -i blue`查找缺少问题，如遇到缺少固件，则进行补足`sudo cp ”缺失部分" /lib/xxx/xxx/`，`sudo modprobe -r btusb`，`sudo modprobe btusb`
 * 系统语言方面：在系统-区域与语言中，对语言全面设置中文，即可将所有软件默认语言处于中文状态，并且会包含中文输入法，fcitx只是一种输入法可以卸载，对于libreoffice安装后如果是英文，可以在包管理中搜索中文包。
@@ -163,7 +164,7 @@
 
 * Ubuntu内置OpenVPN：直接导入配置文件然后输入密码即可回家，几乎不需要额外部署设置，远程则可以用apt库中的Remmina工具。
 
-* 文件管理和smb网络共享：文件管理器nautilus，nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`，部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建软连接（symbolic link/快捷方式）。
+* 文件管理和smb网络共享：对于文件管理器nautilus，nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`，部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建软连接（symbolic link/快捷方式）。对于文件管理器Thunar设置samba共享：1、分别安装好samba和zenity：sudo install samba zenity，2、设置samba-sambashare组件的用户和密码为当前系统用户：sudo usermod -aG sambashare $(whoami)、sudo smbpasswd -a $(whoami)，3、在Thunar文件管理器中配置共享相关按钮，点击编辑->配置自定义动作，名字自取；（1）设置共享命令：net usershare add %n %f “” len:F guest_ok=n && chmod 700 %f；（2）设置取消共享命令：net usershare delete %n；（3）设置显示当前共享的目录：ls -1 /var/lib/samba/usershares/ | zenity --text-info --title="当前已共享的目录"
 
 * 远程控制：ubuntu 23.10实际上已经内置远程控制并支持Windows的RDP协议，但在实际使用时，以Windows10 22H2为例并不能正常连接，提示"发生身份验证错误，有更多数据可用"，所以要通过sudo apt install tightvncserver xrdp命令安装xrdp实现。Linux的远程控制和Windows的登录思路有所不同，远程控制实际是使用用户在远程登录并控制电脑，在Linux中，远程控制不能注销当前本地已登录的用户，然后在远程重新登录以完成远程控制，因此远程控制如果想用当前本地已登陆的用户登陆，首先要确保这个用户已经在本地注销！否则远程控制失败。
 
