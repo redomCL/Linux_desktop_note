@@ -80,7 +80,7 @@
 
 * *fuse .appimage：容器形式，用户空间文件系统，用于对apt的扩充，ubuntu下通过apt安装libfuse2，实现对appimage独立包的直接运行。注意"fuse"对系统的破坏，注意可能需要"afuse"。
 
-* *Flathub .flatpakref：命令行包管理器flatpak，容器形式，包含大量游戏仿真器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
+* *Flathub .flatpakref：命令行包管理器flatpak，容器形式，包含大量游戏仿真器软件和主流软件，flathub已经兼容大多数主流系统（ubuntu/debian/fedora/deepin/mint/opensuse），具体部署可查看flathub官网页尾的设置教程。部分系统已经默认内置无需设置。部分系统下可依赖图形工具管理，比如gnome-software，也可以在浏览器或终端下管理。flatpak是沙箱机制，权限上可能有一些问题，比如flapak版mpv使用插件读取目录时，读取到的就是物理目录映射到沙箱后的沙箱目录，这可能引起一些无法读取部分目录的问题。对于mpv本身解码来讲目前暂未发现影响。未来版本可能修复的：当前ubuntu下的gnome-software下运行报错，解决方法为在/etc/apparmor.d创建bwrap，内部添加：
 
   `abi <abi/4.0>,`
 
