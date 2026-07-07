@@ -18,7 +18,7 @@
 * 完善图形apt：安装apt图形管理工具新立得：`sudo apt install synaptic`
 * 运行当前目录程序：./xxx.xxx可运行当前目录下可执行程序，图形下可直接拖拽到终端运行，`chmod +X ....`开启可执行程序权限。
 * 独立可执行程序：executable/appimage这类独立可执行程序目前依赖要根据不同软件的说明而定，根据目前遇到的，mesen.executable需要.net，cegui，而mesen.appimage需要afuse，注意在ubuntu24.04.1下，安装fuse会引起删除桌面等重要组件，注意区分afuse和fuse，总之，运行appimage要注意fuse，linux任何时候都要考虑依赖（类似windoiws运行库？）。
-* 如果桌面环境受损，参考以下：ctrl+alt+Fx唤起TTY，运行apt命令重新安装，例如：`sudo apt install ubuntu-desktop`,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。
+* 如果桌面环境受损，参考以下：ctrl+alt+F1-F9(mint F7是图形桌面)唤起TTY，运行apt命令重新安装，例如：`sudo apt install ubuntu-desktop`,注意两点，一是注意apt库更新防止出错，二是运行sudo apt时可能出现菱形，此为提示输入root申请密码，按回车结束开始执行，安装桌面可能很慢。ctrl+alt+回车可以强制重启桌面，sudo systemctl restart display-manager也可以对图形桌面进行重启，尤其在只剩下TTY时可能更有用。
 * 安装flathub：flathub有大量软件尤其是仿真器，而且更新速度非常快，可以查看flathub官网底部的设置教程，参考命令：sudo install flatpak
 * 注意ubuntu会包含专用闭源驱动：如果硬件设备有没正常工作的，可以运行附加驱动，会自动查找一些专用设备驱动。
 * nautilus启用rootmode和smb：root组件：sudo apt nautilus-admin，smb组件：`sudo apt nautilus-share`,部署smb：部署用户组：`sudo usermod -aG sambashare $(whoami)`后重启，设置smb密码：`sudo smbpasswd -a $(whoami)`，否则报错权限不够。对于访问Windows非全盘共享，可尝试输入完整分享路径，例：`smb://192.168.110.124/users/`，可能出现无限提示输入账号密码，可尝试输入自己linux的登陆账号和密码。nautilus可创建连接（快捷方式）。
