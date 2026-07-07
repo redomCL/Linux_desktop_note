@@ -276,13 +276,13 @@
 
 ## 六、硬件维护工具篇：Linux与Windows的软件生态自然是不相同，于是类似Windows上的CPU-Z、GPU-Z、AIDA64、HD Tune等等这类工具大多数也是没有跨平台过来的。但是Linux也有自己的一些工具可供安装。
 
-* CPU-X：类似CPU-Z的用处
+* CPU-X：类似CPU-Z的用处。
 
-* hardinfo：类似hwinfo、AIDA64的用处
+* hardinfo：类似hwinfo、AIDA64的用处。
 
-* gsmartcontrol：类似crystalldiskinfo的用处
+* gsmartcontrol：类似crystalldiskinfo的用处。
 
-* gparted：类似diskgenius的用处
+* gparted：类似diskgenius的用处，使用这个工具更容易转换GPT、MBR分区表，它也默认以2048扇区作为起始扇区进行4K对齐，方便划分分区。
 
 * 此外在英特尔平台，可以使用intel-gpu-tools来监视英特尔GPU的负荷，使用时用intel_gpu_top唤出，AMD平台则用amdsmi，不过我的AMDGPU很旧，安装后出现问题并没有成功，英伟达方面暂时未知使用什么工具。
 
