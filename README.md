@@ -252,7 +252,7 @@
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/GRUB2.jpg)
 
-## 五、GNOME插件篇：GNOME桌面可以安装插件增强功能，以下是例举我个人必备的插件，（名为”扩展管理器“的软件是GNOME的插件管理面板，是核心工具）
+## 五、插件篇：GNOME桌面可以安装插件增强功能，以下是例举我个人必备的插件，（名为”扩展管理器“的软件是GNOME的插件管理面板，是核心工具，例如corectrl在mintcinnamon也是可以用的，其他自行测试）
 
 *  vitals：监视CPU、内存、网速等设备状态。
 
@@ -273,6 +273,18 @@
 *  Dynamic Top Panel（已有替代）：状态栏设置
 
 *  ![](https://github.com/redomCL/Linux-desktop-note/blob/main/扩展管理器.png)
+
+## 六、硬件维护工具篇：Linux与Windows的软件生态自然是不相同，于是类似Windows上的CPU-Z、GPU-Z、AIDA64、HD Tune等等这类工具大多数也是没有跨平台过来的。但是Linux也有自己的一些工具可供安装。
+
+* CPU-X：类似CPU-Z的用处
+
+* hardinfo：类似hwinfo、AIDA64的用处
+
+* gsmartcontrol：类似crystalldiskinfo的用处
+
+* gparted：类似diskgenius的用处
+
+* 此外在英特尔平台，可以使用intel-gpu-tools来监视英特尔GPU的负荷，使用时用intel_gpu_top唤出，AMD平台则用amdsmi，不过我的AMDGPU很旧，安装后出现问题并没有成功，英伟达方面暂时未知使用什么工具。
 
 ## 不明问题但解决篇：我能力有限认知不足，这是我的问题
 
