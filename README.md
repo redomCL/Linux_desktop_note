@@ -1,4 +1,4 @@
-# 这是笔记，用来记录Linux桌面版日常家用的经历
+# 这是笔记，用来记录Linux桌面发行版日常家用的经历
 
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/Ubuntu.png)
 ![](https://github.com/redomCL/Linux-desktop-note/blob/main/duckstation.png)
