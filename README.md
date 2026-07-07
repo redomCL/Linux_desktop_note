@@ -284,7 +284,7 @@
 
 * gparted：类似diskgenius的用处，使用这个工具更容易转换GPT、MBR分区表，它也默认以2048扇区作为起始扇区进行4K对齐，方便划分分区。
 
-* 此外在英特尔平台，可以使用intel-gpu-tools来监视英特尔GPU的负荷，使用时用intel_gpu_top唤出，AMD平台则用amdsmi，不过我的AMDGPU很旧，安装后出现问题并没有成功，英伟达方面暂时未知使用什么工具。
+* gpu监视工具：intel-gpu-tools，使用时用intel_gpu_top唤出；radeontop/amdgpu_top，注意多显卡使用-b来指定显卡，英伟达方面暂时未知使用什么工具。
 
 ## 不明问题但解决篇：我能力有限认知不足，这是我的问题
 
