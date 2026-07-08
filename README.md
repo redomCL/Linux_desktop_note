@@ -173,8 +173,10 @@
 * 游戏（转译的wine）：wine日新月异，在此简略记录，仅记录部署过程：
   * 1.确保这些工具在（dirmngr、ca-certificates、curl、software-properties-common、apt-transport-https）：所以安装一次`sudo apt install dirmngr ca-certificates curl software-properties-common apt-transport-https`
   * 2.兼容32位`sudo dpkg --add-architecture i386`
-  * 3.安装Wine仓库的密钥：`curl -s https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor | sudo tee /usr/share/keyrings/winehq.gpg > /dev/null`
-  * 4.添加Wine仓库并刷新仓库：`echo deb [signed-by=/usr/share/keyrings/winehq.gpg] http://dl.winehq.org/wine-builds/ubuntu/ $(lsb_release -cs) main | sudo tee /etc/apt/sources.list.d/winehq.list`，`sudo apt update`
+  * 3.安装Wine仓库的密钥：`sudo mkdir -pm755 /etc/apt/keyrings
+wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+`
+  * 4.添加Wine仓库并刷新仓库（对于ubuntu/mint）：`sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources`，`sudo apt update`
   * 5.刷新仓库后安装Wine(稳定版winehq-stable/预发布版winehq-staging/开发版winehq-devel，各种版本自选)：`sudo apt install --install-recommends winehq-staging`
   * 6.弹出Wine配置界面，`winecfg`，一般会提示安装Windows MOMO，如果因为各种原因没有安装成功，后续使用wintricks也可以完善环境：`sudo apt install winetricks`，一些wintricks快速完善环境的命令，如：`winetricks vcrun2022`，`winetricks allfonts corefonts cjkfonts`，`winetricks d3dx9 d3dx10`，尤其注意中文乱码：`winetricks cjkfonts`，其他字体问题尝试：`winetricks riched20 riched30`，对于具体需要哪些环境，对于Windows已经很了解，此处省略。
   * 7.Wine使用前缀/容器（Prefix）来隔离不同的应用程序环境。默认会创建一个64位容器，路径在~/.wine。创建新的64位容器使用：`WINEPREFIX=<你设置的路径> winecfg`，创建32位容器使用：`WINEARCH=win32 WINEPREFIX=<你设置的路径> winecfg`，创建支持中文的带上`LC_ALL=zh_CN.UTF-8`，即：`WINEPREFIX=<你设置的路径> LC_ALL=zh_CN.UTF-8 winecfg`，实际上路径都建议创建在/home/你所在的用户目录。以上创建容器操作在安装winetricks后也可以在图形界面下操作。若必要使用32位容器来运行32位非安装的程序，要在命令行运行：`WINEPREFIX=~/<你所创建的32位容器路径> wine 你要运行的32位程序`，或向32位容器安装程序（方法多种自行查看图形操作）。
