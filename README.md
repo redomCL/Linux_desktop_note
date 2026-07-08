@@ -186,7 +186,7 @@ wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /
 * docker：
   * 以官网部署教程为准：https://www.docker.com/ ， docker镜像商店可能需要挂代理才能访问，docker desktop访问商店如果不出现结果同理。docker下的qb必须填写要求的端口才能正常访问，如何修改要求目前探索中...
 
-## 四、Linux下的引导、轮转与修复：UEFI直接读取硬盘启动时读取fat/fat32分区下/EFI/BOOT/bootx64.efi，高级的UEFI可以自行浏览并启动任何位置的`.efi`程序
+## 四、Linux下的引导、轮转与修复：UEFI直接读取硬盘，启动时读取fat/fat32分区，挂载点一般为/EFI/BOOT/bootx64.efi，高级的UEFI可以自行浏览并启动任何位置的`.efi`程序
 
 * 对于的Linux GPT：UEFI->/boot/efi/EFI/BOOT/bootx64.efi，这是因为EFI独立分区被挂载到了`/boot/efi`，对于Windows GPT：UEFI->ESP/EFI/BOOT/bootx64.efi，因为EFI在ESP独立分区。
 
