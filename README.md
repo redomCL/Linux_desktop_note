@@ -148,7 +148,7 @@
 
 ![](https://github.com/redomCL/Linux_desktop_note/blob/main/N%E5%8D%A1%E6%AD%A3%E5%B8%B8%E8%AF%86%E5%88%AB.png)
 
-## 三、家用娱乐篇：网络、影音、游戏（转译的wine）
+## 三、家用娱乐篇：网络、影音、游戏（转译的Wine）
 
 * 浏览器：火狐官方直接放出可执行程序，注意火狐在登陆账号上是可以切换国际账号和国内账号的，火狐不存在网络问题，因此推荐国际账号。Linux下的火狐默认不会在新标签打开网页，about:config自定义一些使用习惯：
 
@@ -170,7 +170,7 @@
 
 * 播放器：音乐播放器：clementine，视频播放器：mpv因为图形api和Windows有很大不同，所以设置方面也要多注意图形api调用的问题（vulkan、opengl、waylandvk、x11vk、wayland、x11）。 https://github.com/redomCL/mpv_fruit/tree/Linux-mpv ， 当前默认设置在/.config/mpv。
 
-* 游戏（转译的Wine）：wine日新月异，在此简略记录，仅记录部署过程：
+* 游戏（转译的Wine）：wine日新月异，在此简略记录，仅记录部署过程：最新一次笔记更新在mint cinnamon 22.3下实践完成
   * 0.确保这些工具在（dirmngr、ca-certificates、curl、software-properties-common、apt-transport-https）：所以安装一次`sudo apt install dirmngr ca-certificates curl software-properties-common apt-transport-https`
   * 1.兼容32位`sudo dpkg --add-architecture i386`
   * 2.安装Wine仓库的密钥：`sudo mkdir -pm755 /etc/apt/keyrings
