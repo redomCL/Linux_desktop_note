@@ -258,8 +258,6 @@ wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /
 
 *  vitals：监视CPU、内存、网速等设备状态。
 
-*  corectrl：CPU、GPU设置工具。
-
 *  Blur my shell：毛玻璃效果
 
 *  Burn My Windows：窗口开启关闭动效
@@ -276,9 +274,11 @@ wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /
 
 *  ![](https://github.com/redomCL/Linux-desktop-note/blob/main/扩展管理器.png)
 
-## 六、硬件维护工具篇：Linux与Windows的软件生态自然是不相同，于是类似Windows上的CPU-Z、GPU-Z、AIDA64、HD Tune等等这类工具大多数也是没有跨平台过来的。但是Linux也有自己的一些工具可供安装。
+## 六、硬件维护工具篇：Linux与Windows的软件生态自然是不相同，于是类似Windows上的CPU-Z、GPU-Z、AIDA64、HD Tune等等这类工具大多数也是没有跨平台过来的。但是Linux也有自己的一些工具可供安装。`watch -n 0.5 "cat /proc/cpuinfo | grep MHz"`可以查看CPU实时频率。
 
 * CPU-X：类似CPU-Z的用处。
+
+* cpupower-gui、corectrl：CPU、GPU设置工具。
 
 * hardinfo：类似hwinfo、AIDA64的用处。
 
