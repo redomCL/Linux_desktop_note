@@ -186,7 +186,7 @@ wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /
 * docker：
   * 以官网部署教程为准：https://www.docker.com/ ， docker镜像商店可能需要挂代理才能访问，docker desktop访问商店如果不出现结果同理。docker下的qb必须填写要求的端口才能正常访问，如何修改要求目前探索中...
  
-* 安卓：目前用waydroid，waydroid不是虚拟化，与docker一样，也是一种容器化。具体以官网部署教程为准：https://docs.waydro.id/usage/install-on-desktops，这里主要讲一下初始化过程中下载lineage太慢，用浏览器下载rom后本地安装
+* 安卓：目前用waydroid，waydroid不是虚拟化，与docker一样，也是一种容器化。具体以官网部署教程为准：https://docs.waydro.id/usage/install-on-desktops ，这里主要讲一下初始化过程中下载lineage太慢，用浏览器下载rom后本地安装
   * 0.创建rom的安装目录，`sudo mkdir -p /etc/waydroid-extra/images`这里需要waydroid指定的lineage的system.img和vendor.img，放置在该目录
   * 1.初始化waydroid `sudo waydroid init -f`之后或许需要这两步来启动waydroid，`sudo systemctl start waydroid-container`，`waydroid session start`
   * 2.对于mint，截至22.3依然是xorg，waylan有各种问题，waydroid又只能运行在wayland，所以这里需要weston来转换，apt直接可以安装，之后终端启用weston
